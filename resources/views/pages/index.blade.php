@@ -364,7 +364,7 @@ data=$('#myform').serialize();
         <div class="row no-gutters">
             <div class="col-lg-6">
                 <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="room-santolas.html" class="img" style="background-image: url(images/santolas.jpg);"></a>
+                    <a href="room-santolas.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
                     <div class="half left-arrow d-flex align-items-center">
                         <div class="text p-4 text-center">
                             <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
@@ -377,7 +377,7 @@ data=$('#myform').serialize();
             </div>
             <div class="col-lg-6">
                 <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="room-baleias.html" class="img" style="background-image: url(images/baleias.jpg);"></a>
+                    <a href="room-baleias.html" class="img" style="background-image: url(images/room-1.jpg);"></a>
                     <div class="half left-arrow d-flex align-items-center">
                         <div class="text p-4 text-center">
                             <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
@@ -391,7 +391,7 @@ data=$('#myform').serialize();
 
             <div class="col-lg-6">
                 <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="room-lagostas.html" class="img order-md-last" style="background-image: url(images/lagostas.jpg);"></a>
+                    <a href="room-lagostas.html" class="img order-md-last" style="background-image: url(images/room-2.jpg);"></a>
                     <div class="half right-arrow d-flex align-items-center">
                         <div class="text p-4 text-center">
                             <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
@@ -492,7 +492,7 @@ data=$('#myform').serialize();
             <div class="row">
         <div class="col-lg-6 col-xl-4 d-flex">
             <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/plate-1.jpg);"></div>
+                <div class="img" style="background-image: url(images/dish-1.jpg);"></div>
                 <div class="desc p-4">
                     <div class="d-md-flex text align-items-start">
                         <h3><span>Grilled Crab with Onion</span></h3>
@@ -506,7 +506,7 @@ data=$('#myform').serialize();
         </div>
         <div class="col-lg-6 col-xl-4 d-flex">
             <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/plate-1.jpg);"></div>
+                <div class="img" style="background-image: url(images/dish-2.jpg);"></div>
                 <div class="desc p-4">
                     <div class="d-md-flex text align-items-start">
                         <h3><span>Grilled Crab with Onion</span></h3>
@@ -520,7 +520,7 @@ data=$('#myform').serialize();
         </div>
         <div class="col-lg-6 col-xl-4 d-flex">
             <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/plate-1.jpg);"></div>
+                <div class="img" style="background-image: url(images/dish-3.jpg);"></div>
                 <div class="desc p-4">
                     <div class="d-md-flex text align-items-start">
                         <h3><span>Grilled Crab with Onion</span></h3>
@@ -534,7 +534,7 @@ data=$('#myform').serialize();
         </div>
         <div class="col-lg-6 col-xl-4 d-flex">
             <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/plate-1.jpg);"></div>
+                <div class="img" style="background-image: url(images/dish-4.jpg);"></div>
                 <div class="desc p-4">
                     <div class="d-md-flex text align-items-start">
                         <h3><span>Grilled Crab with Onion</span></h3>
@@ -548,7 +548,7 @@ data=$('#myform').serialize();
         </div>
         <div class="col-lg-6 col-xl-4 d-flex">
             <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/plate-1.jpg);"></div>
+                <div class="img" style="background-image: url(images/dish-5.jpg);"></div>
                 <div class="desc p-4">
                     <div class="d-md-flex text align-items-start">
                         <h3><span>Grilled Crab with Onion</span></h3>
@@ -562,7 +562,7 @@ data=$('#myform').serialize();
         </div>
         <div class="col-lg-6 col-xl-4 d-flex">
             <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/plate-1.jpg);"></div>
+                <div class="img" style="background-image: url(images/dish-6.jpg);"></div>
                 <div class="desc p-4">
                     <div class="d-md-flex text align-items-start">
                         <h3><span>Grilled Crab with Onion</span></h3>

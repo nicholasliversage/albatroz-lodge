@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.index');
 });
+
+//Restaurant
+Route::view('/restaurant', 'restaurant.index');
+
+//About
+Route::view('/about', 'about.index');
+
+//Blog
+Route::view('/blog', 'blog.index');
+
+//Contatcts
+Route::view('/contact', 'contact.index');
+
+//Rooms
+Route::view('/rooms', 'rooms.index');
+
