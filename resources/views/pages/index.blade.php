@@ -267,7 +267,7 @@ data=$('#myform').serialize();
           </div>
           <p>Our exclusive restaurant and fully stocked bar offers mouth watering Mozambiquian cuisine. 
            Relax while enjoying a sundowner, looking out over Tofo Bay.</p>
-          <p><a href="#" class="btn btn-secondary rounded">Reserve Your Room Now</a></p>
+          <p><a href="/rooms" class="btn btn-secondary rounded">Reserve Your Room Now</a></p>
                 </div>
             </div>
         </div>
@@ -575,7 +575,7 @@ data=$('#myform').serialize();
             </div>
         </div>
         <div class="col-md-12 text-center ftco-animate">
-            <p><a href="restaurant.html" class="btn btn-secondary rounded ">View All Menu</a></p>
+            <p><a href="/restaurant" class="btn btn-secondary rounded ">View All Menu</a></p>
         </div>
     </div>
         </div>

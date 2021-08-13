@@ -17,8 +17,8 @@
         <div class="ftco-footer-widget mb-4 ml-md-5">
           <h2 class="ftco-heading-2">Useful Links</h2>
           <ul class="list-unstyled">
-            <li><a href="blog.html" class="py-2 d-block">Blog</a></li>
-            <li><a href="rooms.html" class="py-2 d-block">Rooms</a></li>
+            <li><a href="/blog" class="py-2 d-block">Blog</a></li>
+            <li><a href="/rooms" class="py-2 d-block">Rooms</a></li>
             <li><a href="#" class="py-2 d-block">Amenities</a></li>
             <li><a href="#" class="py-2 d-block">Gift Card</a></li>
           </ul>
@@ -29,8 +29,8 @@
           <h2 class="ftco-heading-2">Privacy</h2>
           <ul class="list-unstyled">
             <li><a href="#" class="py-2 d-block">Career</a></li>
-            <li><a href="about.html" class="py-2 d-block">About Us</a></li>
-            <li><a href="contact.html" class="py-2 d-block">Contact Us</a></li>
+            <li><a href="/about" class="py-2 d-block">About Us</a></li>
+            <li><a href="/contact" class="py-2 d-block">Contact Us</a></li>
             <li><a href="#" class="py-2 d-block">Services</a></li>
           </ul>
         </div>
