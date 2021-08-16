@@ -360,116 +360,27 @@ data=$('#myform').serialize();
           <span class="subheading">Albatroz Rooms</span>
         <h2 class="mb-4">Hotel Master's Rooms</h2>
       </div>
-    </div>  
-        <div class="row no-gutters">
+    </div> 
+    <div class="row no-gutters"> 
+    @foreach ($rooms as $room )
+        
             <div class="col-lg-6">
                 <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="room-santolas.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
+                    <a href="rooms/show/{{ $room->id }}" class="img" style="background-image: url({{ $room->imgRoom }});">
+                    
+                    </a>
                     <div class="half left-arrow d-flex align-items-center">
                         <div class="text p-4 text-center">
                             <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="room-santolas.html">Santolas</a></h3>
-                            <p class="pt-1"><a href="room-santolas.html" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="room-baleias.html" class="img" style="background-image: url(images/room-1.jpg);"></a>
-                    <div class="half left-arrow d-flex align-items-center">
-                        <div class="text p-4 text-center">
-                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="room-baleias.html">Baleias</a></h3>
-                            <p class="pt-1"><a href="room-baleias.html" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
+                            <p class="mb-0"><span class="price mr-1">${{ $room->price }}.00</span> <span class="per">per night</span></p>
+                            <h3 class="mb-3"><a href="rooms/show/{{ $room->id }}">{{ $room->name }}</a></h3>
+                            <p class="pt-1"><a href="rooms/show/{{ $room->id }}" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-6">
-                <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="room-lagostas.html" class="img order-md-last" style="background-image: url(images/room-2.jpg);"></a>
-                    <div class="half right-arrow d-flex align-items-center">
-                        <div class="text p-4 text-center">
-                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="room-lagostas.html">Lagostas</a></h3>
-                            <p class="pt-1"><a href="room-lagostas.html" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="#" class="img order-md-last" style="background-image: url(images/room-3.jpg);"></a>
-                    <div class="half right-arrow d-flex align-items-center">
-                        <div class="text p-4 text-center">
-                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="rooms.html">Golfinhos</a></h3>
-                            <p class="pt-1"><a href="room-golfinhos.html" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="#" class="img" style="background-image: url(images/room-4.jpg);"></a>
-                    <div class="half left-arrow d-flex align-items-center">
-                        <div class="text p-4 text-center">
-                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="rooms.html">Tubarao</a></h3>
-                            <p class="pt-1"><a href="room-tubarao.html" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="#" class="img" style="background-image: url(images/room-5.jpg);"></a>
-                    <div class="half left-arrow d-flex align-items-center">
-                        <div class="text p-4 text-center">
-                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="rooms.html">Peixes</a></h3>
-                            <p class="pt-1"><a href="room-peixes.html" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-6">
-                <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="#" class="img" style="background-image: url(images/room-5.jpg);"></a>
-                    <div class="half left-arrow d-flex align-items-center">
-                        <div class="text p-4 text-center">
-                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="rooms.html">Tartarugas</a></h3>
-                            <p class="pt-1"><a href="room-tartarugas.html" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-6">
-                <div class="room-wrap d-md-flex ftco-animate">
-                    <a href="#" class="img" style="background-image: url(images/room-5.jpg);"></a>
-                    <div class="half left-arrow d-flex align-items-center">
-                        <div class="text p-4 text-center">
-                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="rooms.html">Jamanta</a></h3>
-                            <p class="pt-1"><a href="room-jamanta.html" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
             
         </div>
     </div>
@@ -490,90 +401,28 @@ data=$('#myform').serialize();
       </div>
     </div>
             <div class="row">
+              @foreach ($dishes as $dish )
+                
+             
         <div class="col-lg-6 col-xl-4 d-flex">
             <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/dish-1.jpg);"></div>
+                <div class="img" style="background-image: url(/{{ $dish->imgDish }});"></div>
                 <div class="desc p-4">
                     <div class="d-md-flex text align-items-start">
-                        <h3><span>Grilled Crab with Onion</span></h3>
-                        <span class="price">$20.00</span>
+                        <h3><span>{{ $dish->name }}</span></h3>
+                        <span class="price">${{ $dish->price }}.00</span>
                     </div>
                     <div class="d-block">
-                        <p>A small river named Duden flows by their place and supplies</p>
+                        <p>{{ $dish->description }}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-xl-4 d-flex">
-            <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/dish-2.jpg);"></div>
-                <div class="desc p-4">
-                    <div class="d-md-flex text align-items-start">
-                        <h3><span>Grilled Crab with Onion</span></h3>
-                        <span class="price">$20.00</span>
-                    </div>
-                    <div class="d-block">
-                        <p>A small river named Duden flows by their place and supplies</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-xl-4 d-flex">
-            <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/dish-3.jpg);"></div>
-                <div class="desc p-4">
-                    <div class="d-md-flex text align-items-start">
-                        <h3><span>Grilled Crab with Onion</span></h3>
-                        <span class="price">$20.00</span>
-                    </div>
-                    <div class="d-block">
-                        <p>A small river named Duden flows by their place and supplies</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-xl-4 d-flex">
-            <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/dish-4.jpg);"></div>
-                <div class="desc p-4">
-                    <div class="d-md-flex text align-items-start">
-                        <h3><span>Grilled Crab with Onion</span></h3>
-                        <span class="price">$20.00</span>
-                    </div>
-                    <div class="d-block">
-                        <p>A small river named Duden flows by their place and supplies</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-xl-4 d-flex">
-            <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/dish-5.jpg);"></div>
-                <div class="desc p-4">
-                    <div class="d-md-flex text align-items-start">
-                        <h3><span>Grilled Crab with Onion</span></h3>
-                        <span class="price">$20.00</span>
-                    </div>
-                    <div class="d-block">
-                        <p>A small river named Duden flows by their place and supplies</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-xl-4 d-flex">
-            <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(images/dish-6.jpg);"></div>
-                <div class="desc p-4">
-                    <div class="d-md-flex text align-items-start">
-                        <h3><span>Grilled Crab with Onion</span></h3>
-                        <span class="price">$20.00</span>
-                    </div>
-                    <div class="d-block">
-                        <p>A small river named Duden flows by their place and supplies</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        @endforeach
+       
+        
+        
         <div class="col-md-12 text-center ftco-animate">
             <p><a href="/restaurant" class="btn btn-secondary rounded ">View All Menu</a></p>
         </div>

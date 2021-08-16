@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\DishesController;
+use App\Http\Controllers\BlogsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,23 +17,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('pages.index');
-});
+//home page
+Route::get('/', [HomeController::class, 'index']);
 
 //Restaurant
-Route::view('/restaurant', 'restaurant.index');
+Route::get('/restaurant', [DishesController::class, 'index']);
 
 //About
 Route::view('/about', 'about.index');
 
 //Blog
-Route::view('/blog', 'blog.index');
+Route::get('/blog', [BlogsController::class, 'index']);
+
 
 //Contatcts
 Route::view('/contact', 'contact.index');
 
 //Rooms
-Route::view('/rooms', 'rooms.index');
+Route::get('/rooms', [RoomController::class, 'index']);
+Route::get('/rooms/show/{id}', [RoomController::class, 'show']);
 

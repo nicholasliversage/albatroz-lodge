@@ -54,136 +54,27 @@
         </div>
       </div>
               <div class="row">
-          <div class="col-lg-6 col-xl-6 d-flex">
-              <div class="pricing-entry rounded d-flex ftco-animate">
-                  <div class="img" style="background-image: url(images/dish-1.jpg);"></div>
-                  <div class="desc p-4">
-                      <div class="d-md-flex text align-items-start">
-                          <h3><span>Grilled Crab with Onion</span></h3>
-                          <span class="price">$20.00</span>
-                      </div>
-                      <div class="d-block">
-                          <p>A small river named Duden flows by their place and supplies</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-6 col-xl-6 d-flex">
-              <div class="pricing-entry rounded d-flex ftco-animate">
-                  <div class="img" style="background-image: url(images/dish-2.jpg);"></div>
-                  <div class="desc p-4">
-                      <div class="d-md-flex text align-items-start">
-                          <h3><span>Grilled Crab with Onion</span></h3>
-                          <span class="price">$20.00</span>
-                      </div>
-                      <div class="d-block">
-                          <p>A small river named Duden flows by their place and supplies</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-6 col-xl-6 d-flex">
-              <div class="pricing-entry rounded d-flex ftco-animate">
-                  <div class="img" style="background-image: url(images/dish-3.jpg);"></div>
-                  <div class="desc p-4">
-                      <div class="d-md-flex text align-items-start">
-                          <h3><span>Grilled Crab with Onion</span></h3>
-                          <span class="price">$20.00</span>
-                      </div>
-                      <div class="d-block">
-                          <p>A small river named Duden flows by their place and supplies</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
 
+                @foreach ($dishes as $dish)
+                    
+               
           <div class="col-lg-6 col-xl-6 d-flex">
               <div class="pricing-entry rounded d-flex ftco-animate">
-                  <div class="img" style="background-image: url(images/dish-4.jpg);"></div>
+                  <div class="img" style="background-image: url({{ $dish->imgDish }});"></div>
                   <div class="desc p-4">
                       <div class="d-md-flex text align-items-start">
-                          <h3><span>Grilled Crab with Onion</span></h3>
-                          <span class="price">$20.00</span>
+                          <h3><span>{{ $dish->name }}</span></h3>
+                          <span class="price">${{ $dish->price }}.00</span>
                       </div>
                       <div class="d-block">
-                          <p>A small river named Duden flows by their place and supplies</p>
+                          <p>{{ $dish->description }}</p>
                       </div>
                   </div>
               </div>
           </div>
-          <div class="col-lg-6 col-xl-6 d-flex">
-              <div class="pricing-entry rounded d-flex ftco-animate">
-                  <div class="img" style="background-image: url(images/dish-5.jpg);"></div>
-                  <div class="desc p-4">
-                      <div class="d-md-flex text align-items-start">
-                          <h3><span>Grilled Crab with Onion</span></h3>
-                          <span class="price">$20.00</span>
-                      </div>
-                      <div class="d-block">
-                          <p>A small river named Duden flows by their place and supplies</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-6 col-xl-6 d-flex">
-              <div class="pricing-entry rounded d-flex ftco-animate">
-                  <div class="img" style="background-image: url(images/dish-6.jpg);"></div>
-                  <div class="desc p-4">
-                      <div class="d-md-flex text align-items-start">
-                          <h3><span>Grilled Crab with Onion</span></h3>
-                          <span class="price">$20.00</span>
-                      </div>
-                      <div class="d-block">
-                          <p>A small river named Duden flows by their place and supplies</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-lg-6 col-xl-6 d-flex">
-              <div class="pricing-entry rounded d-flex ftco-animate">
-                  <div class="img" style="background-image: url(images/dish-6.jpg);"></div>
-                  <div class="desc p-4">
-                      <div class="d-md-flex text align-items-start">
-                          <h3><span>Grilled Crab with Onion</span></h3>
-                          <span class="price">$20.00</span>
-                      </div>
-                      <div class="d-block">
-                          <p>A small river named Duden flows by their place and supplies</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-6 col-xl-6 d-flex">
-              <div class="pricing-entry rounded d-flex ftco-animate">
-                  <div class="img" style="background-image: url(images/menu-8.jpg);"></div>
-                  <div class="desc p-4">
-                      <div class="d-md-flex text align-items-start">
-                          <h3><span>Grilled Crab with Onion</span></h3>
-                          <span class="price">$20.00</span>
-                      </div>
-                      <div class="d-block">
-                          <p>A small river named Duden flows by their place and supplies</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-6 col-xl-6 d-flex">
-              <div class="pricing-entry rounded d-flex ftco-animate">
-                  <div class="img" style="background-image: url(images/menu-9.jpg);"></div>
-                  <div class="desc p-4">
-                      <div class="d-md-flex text align-items-start">
-                          <h3><span>Grilled Crab with Onion</span></h3>
-                          <span class="price">$20.00</span>
-                      </div>
-                      <div class="d-block">
-                          <p>A small river named Duden flows by their place and supplies</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
+          @endforeach
       </div>
-          </div>
+          
       </section>
 
 @endsection
