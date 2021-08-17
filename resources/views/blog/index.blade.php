@@ -30,11 +30,7 @@
             <div class="text mt-3">
                 <div class="meta mb-2">
                 <div><a >{{ $blog->created_at }}</a></div>
-                @if ($blog->comments == null)
-                <div><a class="meta-chat"><span class="icon-chat"></span> 0</a></div>
-                  @else
-                  <div><a class="meta-chat"><span class="icon-chat"></span> {{ $blog->comments->count }}</a></div>
-                @endif
+                  <div><a class="meta-chat"><span class="icon-chat"></span> {{ $blog->comments->count() }}</a></div>
               </div>
               <h3 class="heading"><a href="/blogs/show/{{ $blog->id }}">{{ $blog->title }}</a></h3>
               <p>{{ $blog->subject }}</p>

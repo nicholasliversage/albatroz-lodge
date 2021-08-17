@@ -28,7 +28,8 @@ Route::view('/about', 'about.index');
 
 //Blog
 Route::get('/blog', [BlogsController::class, 'index']);
-
+Route::get('/blogs/show/{id}', [BlogsController::class, 'show']);
+Route::post('/blogs/comment/{id}', [BlogsController::class, 'storeComment'])->name('blogs.comment');
 
 //Contatcts
 Route::view('/contact', 'contact.index');
