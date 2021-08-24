@@ -17,6 +17,7 @@ use App\Http\Controllers\BlogsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 //home page
 Route::get('/', [HomeController::class, 'index']);
 
@@ -38,3 +39,14 @@ Route::view('/contact', 'contact.index');
 Route::get('/rooms', [RoomController::class, 'index']);
 Route::get('/rooms/show/{id}', [RoomController::class, 'show']);
 
+//Admin Page
+
+//Login
+
+Auth::routes();
+
+// dashboard
+Route::get('/dashboard', function() {
+    return view('admin.dashboard');
+  })->middleware('auth');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

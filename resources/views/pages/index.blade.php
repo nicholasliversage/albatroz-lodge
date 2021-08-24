@@ -57,26 +57,7 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="col-md d-flex py-md-4">
-                        <div class="form-group align-self-stretch d-flex align-items-end">
-                            <div class="wrap align-self-stretch py-3 px-4">
-                                  <label for="#">Room</label>
-                                  <div class="form-field">
-                                    <div class="select-wrap">
-                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                            <select name="room" id="" class="form-control">
-                                <option value="Suite">Suite</option>
-                              <option value="Family Room">Family Room</option>
-                              <option value="Deluxe Room">Deluxe Room</option>
-                              <option value="Classic Room">Classic Room</option>
-                              <option value="Superior Room">Superior Room</option>
-                              <option value="Luxury Room">Luxury Room</option>
-                            </select>
-                          </div>
-                          </div>
-                        </div>
-                  </div>
-                    </div>
+                    
                     <div class="col-md d-flex py-md-4">
                         <div class="form-group align-self-stretch d-flex align-items-end">
                             <div class="wrap align-self-stretch py-3 px-4">
@@ -97,7 +78,11 @@
                         </div>
                   </div>
                     </div>
+
+                    
+
                     <div class="col-md d-flex">
+                      
                         <div class="form-group d-flex align-self-stretch">
                       <a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat" class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block"><span>Check Availability <small>Best Price Guaranteed!</small></span></a>
                     </div>

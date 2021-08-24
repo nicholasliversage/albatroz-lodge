@@ -30,6 +30,7 @@
           <ul class="list-unstyled">
             <li><a href="#" class="py-2 d-block">Career</a></li>
             <li><a href="/about" class="py-2 d-block">About Us</a></li>
+            <li><a href="/login" class="py-2 d-block">Admin Panel</a></li>
             <li><a href="/contact" class="py-2 d-block">Contact Us</a></li>
             <li><a href="#" class="py-2 d-block">Services</a></li>
           </ul>
