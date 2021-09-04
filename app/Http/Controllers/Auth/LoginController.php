@@ -43,12 +43,18 @@ class LoginController extends Controller
   if (auth()->user()->user_type == 'Administrator')
   {
     return 'dashboard';  // admin dashboard path
-  } else {
+  }else if(auth()->user()->user_type == 'Client')
+  {
+    return '/';  // admin dashboard path
+  }  
+  else {
     return 'admin';  // member dashboard path
   }
+  
 }
 
 protected function loggedOut(Request $request) {
-    return redirect('/login');
+    
+    return redirect('/');  
 }
 }

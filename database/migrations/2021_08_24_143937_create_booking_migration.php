@@ -15,9 +15,8 @@ class CreateBookingMigration extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('contact');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('room_id')->nullable();
             $table->integer('guests');
             $table->string('check_in');
             $table->string('check_out');

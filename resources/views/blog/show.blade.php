@@ -46,23 +46,29 @@
           
           <div id="scroll" class="pt-5 mt-5">
             <h3 class="mb-5">Comments</h3>
-              <div id="display_comment"></div>
-          <div class="about-author d-flex p-4 bg-light">
+             
             @if ($blog->comments->count()>0)
             @foreach ($blog->comments as $comment)
+            <div id="display_comment"></div>
+            <div class="about-author d-flex p-4 bg-light">
             <div class="desc align-self-md-center">
-                <h3>{{ $comment->name }}</h3>
+                <h3>{{ $comment->user->name }}</h3>
                 <p>{{ $comment->description }}</p>
               </div>
+            </div>
+            <br>
               @endforeach
               @else
+              <div id="display_comment"></div>
+              <div class="about-author d-flex p-4 bg-light">
               <div class="desc align-self-md-center">
                 <h3>This Blog</h3>
                 <p>Has no comments</p>
               </div>
+              </div>
             @endif
             
-          </div>
+          
 
 
           
@@ -74,10 +80,7 @@
               <h3 class="mb-5">Leave a comment</h3>
               <form action=" {!! route('blogs.comment',$blog->id) !!}" method="POST" id="comment_form" class="p-5 bg-light">
                   @csrf
-                <div class="form-group">
-                  <label for="name">Name *</label>
-                  <input type="text" class="form-control" name="comment_name" id="comment_name">
-                </div>
+                
                 <div class="form-group">
                   <label for="message">Message</label>
                   <textarea name="comment_content" id="comment_content" cols="30" rows="10" class="form-control"></textarea>

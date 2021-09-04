@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\DishesController;
 use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\BookingController;
 
 
 /*
@@ -39,6 +41,10 @@ Route::view('/contact', 'contact.index');
 Route::get('/rooms', [RoomController::class, 'index']);
 Route::get('/rooms/show/{id}', [RoomController::class, 'show']);
 
+//Bookings
+Route::post('/booking', [BookingController::class, 'store'])->name('booking.make');
+
+
 //Admin Page
 
 //Login
@@ -50,3 +56,6 @@ Route::get('/dashboard', function() {
     return view('admin.dashboard');
   })->middleware('auth');
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Registration
+Route::post('custom-Registration', [RegisterController::class,'store'])->name('register.custom');

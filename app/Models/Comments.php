@@ -22,11 +22,16 @@ class Comments extends Model
      * @var array
      */
     protected $fillable = [
-        'name','description','blogs_id'
+        'description','blogs_id','user_id'
     ];
 
     public function blog()
     {
         return $this->belongsTo(Blogs::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'id');
     }
 }

@@ -39,13 +39,14 @@
     <div class="container">
         <div class="row no-gutters">
             <div class="col-lg-12">
-                <form id="myform" action="" method="post"  class="booking-form aside-stretch">
-                <div class="row">
+                <form id="myform" method="POST" action="{{ route('booking.make') }}"  class="booking-form aside-stretch">
+               @csrf
+                  <div class="row">
                     <div class="col-md d-flex py-md-4">
                         <div class="form-group align-self-stretch d-flex align-items-end">
                             <div class="wrap align-self-stretch py-3 px-4">
                                     <label for="#">Check-in Date</label>
-                                    <input name="check-in" type="text" class="form-control checkin_date" placeholder="Check-in date">
+                                    <input name="check_in" id="check_in" type="text" class="form-control checkin_date" placeholder="Check-in date">
                                 </div>
                             </div>
                     </div>
@@ -53,7 +54,7 @@
                         <div class="form-group align-self-stretch d-flex align-items-end">
                             <div class="wrap align-self-stretch py-3 px-4">
                                     <label for="#">Check-out Date</label>
-                                    <input name="check-out" type="text" class="form-control checkout_date" placeholder="Check-out date">
+                                    <input name="check_out" id="check_out" type="text" class="form-control checkout_date" placeholder="Check-out date">
                                 </div>
                             </div>
                     </div>
@@ -65,7 +66,7 @@
                                   <div class="form-field">
                                     <div class="select-wrap">
                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                            <select name="guests" id="" class="form-control">
+                            <select name="guests" id="guests" class="form-control">
                                 <option value="1">1 Adult</option>
                               <option value="2">2 Adult</option>
                               <option value="3">3 Adult</option>
@@ -84,44 +85,13 @@
                     <div class="col-md d-flex">
                       
                         <div class="form-group d-flex align-self-stretch">
-                      <a href="" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat" class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block"><span>Check Availability <small>Best Price Guaranteed!</small></span></a>
+                          <button type="submit" class="btn btn-primary">
+                            <span>Check Availability <small>Best Price Guaranteed!</small></span>
+                          </button>
                     </div>
                     </div>
                 </div>
-            
-<!-- The Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-  <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Availability</h5>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body" >
-  
-    
-      <div class="form-group" style="border: 1px solid #6c757d;padding: 12px 20px; margin-bottom:10px;">
-        <input id="mail-name" type="text" name="name" class="form-control" placeholder="Your Name" >
-      </div>
-      <div class="form-group" style="border: 1px solid #6c757d;padding: 12px 20px; margin-bottom:10px;">
-        <input id="mail-email" type="text" name="email" class="form-control" placeholder="Your Email">
-      </div>
-      <div class="form-group" style="border: 1px solid #6c757d;padding: 12px 20px; margin-top:10px;">
-        <input id="mail-number" type="text" name="number" class="form-control" placeholder="Your Phone Number">
-      </div>
-    
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button id="mail" type="button" onclick="submitmyform();" class="btn btn-primary">
-    <i style="display:none;" class="fa fa-refresh fa-spin" ></i><span id="send_btn">Send Message</span> 
-    </button>
-  </div>
-</div>
-</div>
-</div>
+   
         
         
             </form>
@@ -130,37 +100,7 @@
     </div>
 </section>
 
-<script type="text/javascript">
-function load(msg) {  
-  setTimeout( 
-        function  (){  
-           $('#send_btn').text('Send Message');
-           $('#mail i').toggle();
-            alert(msg);
-            $('#myform').trigger('reset');
-        }, 3000);   
-  }
- 
-function submitmyform(){
-$('#send_btn').text('Sending');
-$('#mail i').toggle();
-data=$('#myform').serialize();
-    $.ajax({
-    url: "sms.php",
-    type:'POST',
-    data:data,
-    async:false,
-    dataType:'html',
-    success: function(msg){
-    load("Email sent!!");
-    },
-    error: function(msg){
-     load("Failed to send!!");
-        
-    }
-});
-}
-</script>
+
 
 
 

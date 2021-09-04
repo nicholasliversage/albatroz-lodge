@@ -22,6 +22,11 @@ class Booking extends Model
      * @var array
      */
     protected $fillable = [
-        'name','email','contact','guests','check_in','check_out'
+        'room_id','user_id','guests','check_in','check_out'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
