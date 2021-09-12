@@ -219,7 +219,7 @@
       <div class="col-md-7 py-5 pl-md-5">
           <div class="py-md-5">
               <div class="heading-section ftco-animate mb-4">
-                  <span class="subheading">Testimony</span>
+                  <span class="subheading">Reviews</span>
                   <h2 class="mb-0">Happy Customer</h2>
                 </div>
             <div class="carousel-testimony owl-carousel ftco-animate">
@@ -229,11 +229,11 @@
                     <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                   </div>
                   <div class="d-flex">
-                      <div class="user-img" style="background-image: url(images/person_1.jpg)">
+                      <div class="user-img" style="background-image: url(images/profile-1.jpg)">
                       </div>
                       <div class="pos ml-3">
                           <p class="name">Gerald Hodson</p>
-                        <span class="position">Businessman</span>
+                        <span class="position">Customer</span>
                       </div>
                     </div>
                 </div>
