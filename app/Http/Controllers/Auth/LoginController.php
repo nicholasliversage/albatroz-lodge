@@ -45,6 +45,12 @@ class LoginController extends Controller
     return 'dashboard';  // admin dashboard path
   }else if(auth()->user()->user_type == 'Client')
   {
+    $notification = [
+      'message' => 'Login Successful', 
+      'type' => 'success'
+  ];
+  
+  session()->flash('notification', $notification);
     return '/';  // admin dashboard path
   }  
   else {
@@ -54,7 +60,12 @@ class LoginController extends Controller
 }
 
 protected function loggedOut(Request $request) {
-    
+  $notification = [
+    'message' => 'You Are Now Logged Out', 
+    'type' => 'info'
+];
+
+session()->flash('notification', $notification);
     return redirect('/');  
 }
 }

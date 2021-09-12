@@ -2,6 +2,12 @@
 
 @section('content')
 
+@if (Session::has('error'))
+
+            <div class="alert alert-danger mt-2">{{ Session::get('error') }} 
+            </div>
+
+            @endif
 
 <div class="hero">
     <section class="home-slider owl-carousel">
@@ -47,7 +53,10 @@
                             <div class="wrap align-self-stretch py-3 px-4">
                                     <label for="#">Check-in Date</label>
                                     <input name="check_in" id="check_in" type="text" class="form-control checkin_date" placeholder="Check-in date">
-                                </div>
+                                    @if ($errors->has('check_in'))
+                                    <span class="text-danger">{{ $errors->first('check_in') }}</span>
+                                @endif
+                                  </div>
                             </div>
                     </div>
                     <div class="col-md d-flex py-md-4">
@@ -55,7 +64,10 @@
                             <div class="wrap align-self-stretch py-3 px-4">
                                     <label for="#">Check-out Date</label>
                                     <input name="check_out" id="check_out" type="text" class="form-control checkout_date" placeholder="Check-out date">
-                                </div>
+                                    @if ($errors->has('check_out'))
+                                    <span class="text-danger">{{ $errors->first('check_out') }}</span>
+                                @endif
+                                  </div>
                             </div>
                     </div>
                     

@@ -60,7 +60,14 @@ class RegisterController extends Controller
         $data = $request->all();
         $check = $this->create($data);
          $check->save();
-         return redirect()->back()->withSuccess('User Registered!');
+
+         $notification = [
+            'message' => 'Registration Successful', 
+            'type' => 'success'
+        ];
+        
+        session()->flash('notification', $notification);
+         return redirect()->back();
      }
 
     protected function validator(array $data)

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="hero-wrap" style="background-image: url('/images/bg_3.jpg');">
+<div class="hero-wrap" style="background-image: url('/images/header.jpg');">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
@@ -78,21 +78,26 @@
             
             <div class="comment-form-wrap pt-5">
               <h3 class="mb-5">Leave a comment</h3>
+              @guest
+              <h4 class="mb-5">You must be logged in to comment</h4>
+              @else
               <form action=" {!! route('blogs.comment',$blog->id) !!}" method="POST" id="comment_form" class="p-5 bg-light">
-                  @csrf
-                
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea name="comment_content" id="comment_content" cols="30" rows="10" class="form-control"></textarea>
-                </div>
-                <div class="form-group">
-                  <input type="hidden" name="comment_id" id="comment_id" value="0" />
-                  <button  type="submit"  name="submit" id="submit" value="Submit" class="btn py-3 px-4 btn-secondary">
-                  <i style="display:none;" class="fa fa-refresh fa-spin" ></i><span id="send_btn">Submit</span> 
-                  </button>
-                </div>
+                @csrf
+              
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="comment_content" id="comment_content" cols="30" rows="10" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="hidden" name="comment_id" id="comment_id" value="0" />
+                <button  type="submit"  name="submit" id="submit" value="Submit" class="btn py-3 px-4 btn-secondary">
+                <i style="display:none;" class="fa fa-refresh fa-spin" ></i><span id="send_btn">Submit</span> 
+                </button>
+              </div>
 
-              </form>
+            </form>
+              @endguest
+             
             </div>
           </div>
 

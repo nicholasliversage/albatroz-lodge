@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Booking;
+use Session;
 
 class BookingController extends Controller
 {
@@ -15,6 +16,8 @@ class BookingController extends Controller
             'guests' => 'required',
         ]);
 
+        if(auth()->id()){
+
         $id = auth()->id();
         $user = User::find($id) ;
         $booking = new Booking();
@@ -24,7 +27,22 @@ class BookingController extends Controller
         $booking->room_id = null;
         //$booking->user_id = $user->id;
         $user->bookings()->save($booking);
+        $notification = [
+            'message' => 'Your Request Has Been Sent', 
+            'type' => 'success'
+        ];
+        
+        session()->flash('notification', $notification);
+        return back();
+        }
+        else{
+            $notification = [
+                'message' => 'Please Login First', 
+                'type' => 'info'
+            ];
             
-        return redirect()->back()->with('Request sent!');
+            session()->flash('notification', $notification);
+            return back();
+        }
       }
 }

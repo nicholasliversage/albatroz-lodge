@@ -56,3 +56,6 @@
 
 @include('partials.login')
 @include('partials.register')
+
+
+
