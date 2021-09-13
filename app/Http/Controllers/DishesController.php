@@ -13,4 +13,11 @@ class DishesController extends Controller
 
        return view('restaurant.index', compact('dishes'));
     }
+
+    public function admin_index(){
+
+        $dishes = Dishes::all();
+ 
+        return view('admin.pages.dishes', compact('dishes'));
+     }
 }

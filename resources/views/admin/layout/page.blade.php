@@ -9,6 +9,7 @@
 
         <title>Albatroz Admin Panel</title>
 
+        
         <!-- Bootstrap Core CSS -->
         <link href="/css-admin/bootstrap.min.css" rel="stylesheet">
 

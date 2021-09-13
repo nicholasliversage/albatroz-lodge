@@ -62,3 +62,6 @@ Route::post('custom-Registration', [RegisterController::class,'store'])->name('r
 
 //Review
 Route::post('Review', [ReviewController::class,'store'])->name('review.custom');
+
+//admin-dishes
+Route::get('/admin/dishes', [DishesController::class, 'admin_index']);

@@ -158,7 +158,7 @@
 
                 @foreach ($dishes as $dish)
                     
-               
+               @if ($dish->special)
           <div class="col-lg-6 col-xl-6 d-flex">
               <div class="pricing-entry rounded d-flex ftco-animate">
                   <div class="img" style="background-image: url({{ $dish->imgDish }});"></div>
@@ -173,6 +173,7 @@
                   </div>
               </div>
           </div>
+          @endif
           @endforeach
       </div>
           

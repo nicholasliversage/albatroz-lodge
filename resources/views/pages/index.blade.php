@@ -300,30 +300,31 @@
             <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-7 heading-section text-center ftco-animate">
           <span class="subheading">Restaurant</span>
-        <h2>Restaurant</h2>
+        <h2>Our Specials</h2>
       </div>
     </div>
-            <div class="row">
-              @foreach ($dishes as $dish )
-                
-             
-        <div class="col-lg-6 col-xl-4 d-flex">
-            <div class="pricing-entry rounded d-flex ftco-animate">
-                <div class="img" style="background-image: url(/{{ $dish->imgDish }});"></div>
-                <div class="desc p-4">
-                    <div class="d-md-flex text align-items-start">
-                        <h3><span>{{ $dish->name }}</span></h3>
-                        <span class="price">${{ $dish->price }}.00</span>
-                    </div>
-                    <div class="d-block">
-                        <p>{{ $dish->description }}</p>
-                    </div>
-                </div>
+    <div class="row">
+
+      @foreach ($dishes as $dish)
+          
+     @if ($dish->special)
+<div class="col-lg-6 col-xl-6 d-flex">
+    <div class="pricing-entry rounded d-flex ftco-animate">
+        <div class="img" style="background-image: url({{ $dish->imgDish }});"></div>
+        <div class="desc p-4">
+            <div class="d-md-flex text align-items-start">
+                <h3><span>{{ $dish->name }}</span></h3>
+                <span class="price">${{ $dish->price }}.00</span>
+            </div>
+            <div class="d-block">
+                <p>{{ $dish->description }}</p>
             </div>
         </div>
-
-        @endforeach
-       
+    </div>
+</div>
+@endif
+@endforeach
+</div>
         
         
         <div class="col-md-12 text-center ftco-animate">

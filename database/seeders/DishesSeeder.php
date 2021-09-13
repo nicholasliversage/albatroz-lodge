@@ -18,6 +18,8 @@ class DishesSeeder extends Seeder
         $dish1->name = 'Grilled Crab with Onion';
         $dish1->imgDish = 'images/menu-3.jpg';
         $dish1->description = 'A small river named Duden flows by their place and supplies';
+        $dish1->special = true;
+        $dish1->category = 'main';
         $dish1->price = 120.00;
         $dish1->save();
     }
