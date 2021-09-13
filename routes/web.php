@@ -7,7 +7,7 @@ use App\Http\Controllers\DishesController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BookingController;
-
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +59,6 @@ Route::get('/dashboard', function() {
 
 //Registration
 Route::post('custom-Registration', [RegisterController::class,'store'])->name('register.custom');
+
+//Review
+Route::post('Review', [ReviewController::class,'store'])->name('review.custom');

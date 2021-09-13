@@ -97,7 +97,7 @@
                     <div class="col-md d-flex">
                       
                         <div class="form-group d-flex align-self-stretch">
-                          <button type="submit" class="btn btn-primary">
+                          <button type="submit" class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block">
                             <span>Check Availability <small>Best Price Guaranteed!</small></span>
                           </button>
                     </div>
@@ -223,71 +223,37 @@
                   <h2 class="mb-0">Happy Customer</h2>
                 </div>
             <div class="carousel-testimony owl-carousel ftco-animate">
+
+              @foreach ($reviews as $review)
               <div class="item">
                 <div class="testimony-wrap pb-4">
                   <div class="text">
-                    <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                    <p class="mb-4">{{ $review->description }}</p>
                   </div>
                   <div class="d-flex">
                       <div class="user-img" style="background-image: url(images/profile-1.jpg)">
                       </div>
                       <div class="pos ml-3">
-                          <p class="name">Gerald Hodson</p>
+                          <p class="name">{{ $review->user->name }}</p>
                         <span class="position">Customer</span>
                       </div>
                     </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="testimony-wrap pb-4">
-                  <div class="text">
-                    <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                  </div>
-                  <div class="d-flex">
-                      <div class="user-img" style="background-image: url(images/person_2.jpg)">
-                      </div>
-                      <div class="pos ml-3">
-                          <p class="name">Gerald Hodson</p>
-                        <span class="position">Businessman</span>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap pb-4">
-                  <div class="text">
-                    <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                  </div>
-                  <div class="d-flex">
-                      <div class="user-img" style="background-image: url(images/person_3.jpg)">
-                      </div>
-                      <div class="pos ml-3">
-                          <p class="name">Gerald Hodson</p>
-                        <span class="position">Businessman</span>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap pb-4">
-                  <div class="text">
-                    <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                  </div>
-                  <div class="d-flex">
-                      <div class="user-img" style="background-image: url(images/person_4.jpg)">
-                      </div>
-                      <div class="pos ml-3">
-                          <p class="name">Gerald Hodson</p>
-                        <span class="position">Businessman</span>
-                      </div>
-                    </div>
-                </div>
-              </div>
+              @endforeach
+                      
             </div>
           </div>
+
+          <div class="col-md-12 text-center ftco-animate">
+            <p><a href="#" class="btn btn-secondary rounded" data-toggle="modal" data-target="#reviewModal">Leave a Review</a></p>
+          </div>
+
       </div>
     </div>
   </div>
+
+  
 </section>
 
 <section class="ftco-section ftco-no-pb ftco-room">
@@ -450,3 +416,4 @@
 </section>
 
 @endsection
+

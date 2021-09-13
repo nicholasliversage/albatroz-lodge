@@ -56,6 +56,6 @@
 
 @include('partials.login')
 @include('partials.register')
-
+@include('partials.review')
 
 
