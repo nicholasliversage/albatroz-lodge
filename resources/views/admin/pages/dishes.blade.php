@@ -4,8 +4,9 @@
 @include('admin.inc.sidebar')
 <div id="page-wrapper">
 
-    <div style="text-align:center;">
-        <h2>Menu</h2>
+    <div >
+        <h2 style="text-align:center;">Menu</h2>
+        <button type="button" class="btn btn-success">Add New Dish</button>
       </div>
       <br>
 
@@ -19,7 +20,8 @@
               <h4 class="card-title">{{ $dish->name }}</h4>
               <p class="card-text">{{ $dish->description }}</p>
              <p> <span>${{ $dish->price }}.00</span><p>
-              <a href="#" class="btn btn-primary">See Profile</a>
+              <a href="#" class="btn btn-primary">Edit</a>
+              <a class="btn btn-danger" href="#" >Delete</a>
             </div>
           </div>
     @endif

@@ -1,27 +1,20 @@
-<style>
 
-</style>
             <!-- Navigation -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <nav class="navbar navbar-dark bg-primary ">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/dashboard">Albatroz-Admin</a>
                 </div>
 
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
+               
+               
                
 
                 <ul class="nav navbar-right navbar-top-links">
                     @if (Auth::guest() == false)
-                    <li class="dropdown navbar-inverse">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <li >
+                        <button type="button" class="btn btn-primary dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" href="#">
                             <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
-                        </a>
+                        </button>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
                                 <a href="#">

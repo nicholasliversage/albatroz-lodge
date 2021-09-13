@@ -43,11 +43,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </head>
     <body>
-        @include('inc.loader')
+     
 
         @include('admin.inc.header')
           
-        @include('inc.flash-message')
+        
         @yield('content')
 
          <!-- jQuery -->
