@@ -18,4 +18,9 @@ class RoomController extends Controller
         $room = Room::find($id);
         return view('rooms.show', compact('room'));
     }
+
+    public function admin_index(){
+        $rooms = Room::all();
+        return view('admin.pages.rooms', compact('rooms'));
+    }
 }

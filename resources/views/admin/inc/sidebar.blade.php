@@ -19,26 +19,26 @@
                 <a href="#"><i class="fa fa-bookmark fa-fw"></i> Reservations<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="flot.html">Marked</a>
+                        <a href="/admin/reservations/marked">Marked</a>
                     </li>
                     <li>
-                        <a href="morris.html">Requests</a>
+                        <a href="/admin/reservations/requests">Requests</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="tables.html"><i class="fa fa-home fa-fw"></i> Chalets</a>
+                <a href="/admin/rooms"><i class="fa fa-home fa-fw"></i> Chalets</a>
             </li>
             <li>
-                <a href="forms.html"><i class="fa fa-book fa-fw"></i> Blogs</a>
+                <a href="/admin/blogs"><i class="fa fa-book fa-fw"></i> Blogs</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-cutlery fa-fw"></i> Menu</a>
+                <a href="/admin/dishes"><i class="fa fa-cutlery fa-fw"></i> Menu</a>
                 
             </li>
             <li>
-                <a href="#"><i class="fa fa-user-circle fa-fw"></i> Users</a>
+                <a href="/admin/users"><i class="fa fa-user-circle fa-fw"></i> Users</a>
                
             </li>
             

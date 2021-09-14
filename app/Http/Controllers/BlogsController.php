@@ -38,5 +38,10 @@ class BlogsController extends Controller
             
         return redirect()->back();
       }
+
+      public function admin_index(){
+        $blogs = Blogs::all();
+        return view('admin.pages.blogs', compact('blogs'));
+      }
   }
 

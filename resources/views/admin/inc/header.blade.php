@@ -72,9 +72,9 @@
                    
                   @else
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <button type="button" class="btn btn-primary dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" href="#">
                             <i class="fa fa-user fa-fw"></i> {{ Auth::user()->name }} <b class="caret"></b>
-                        </a>
+                        </button>
                         <ul class="dropdown-menu dropdown-user">
                             <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                             </li>

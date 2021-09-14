@@ -64,4 +64,10 @@ Route::post('custom-Registration', [RegisterController::class,'store'])->name('r
 Route::post('Review', [ReviewController::class,'store'])->name('review.custom');
 
 //admin-dishes
-Route::get('/admin/dishes', [DishesController::class, 'admin_index']);
+Route::get('/admin/dishes', [DishesController::class, 'admin_index'])->middleware('auth');;
+
+//admin-rooms
+Route::get('/admin/rooms', [RoomController::class, 'admin_index'])->middleware('auth');;
+
+//admin-blogs
+Route::get('/admin/blogs', [BlogsController::class, 'admin_index'])->middleware('auth');;
