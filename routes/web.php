@@ -8,7 +8,7 @@ use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ReviewController;
-
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,3 +71,7 @@ Route::get('/admin/rooms', [RoomController::class, 'admin_index'])->middleware('
 
 //admin-blogs
 Route::get('/admin/blogs', [BlogsController::class, 'admin_index'])->middleware('auth');;
+
+//admin-users
+Route::get('/admin/users', [UsersController::class, 'admin_index'])->middleware('auth');;
+
