@@ -16,13 +16,13 @@
                 <a href="/dashboard" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-bookmark fa-fw"></i> Reservations<span class="fa arrow"></span></a>
+                <a ><i class="fa fa-bookmark fa-fw"></i> Reservations<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="/admin/reservations/marked">Marked</a>
+                        <a href="/admin/reservations">Marked</a>
                     </li>
                     <li>
-                        <a href="/admin/reservations/requests">Requests</a>
+                        <a href="/admin/requests">Requests</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

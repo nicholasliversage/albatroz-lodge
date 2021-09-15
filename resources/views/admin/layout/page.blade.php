@@ -15,6 +15,12 @@
 
         <!-- MetisMenu CSS -->
         <link href="/css-admin/metisMenu.min.css" rel="stylesheet">
+
+          <!-- DataTables CSS -->
+          <link href="/css-admin/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+          <!-- DataTables Responsive CSS -->
+          <link href="/css-admin/dataTables/dataTables.responsive.css" rel="stylesheet">
            
         <!-- Timeline CSS -->
     <link href="/css-admin/timeline.css" rel="stylesheet">
@@ -33,14 +39,7 @@
         <![endif]-->
 
       
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
-        
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<link rel="stylesheet" type="text/css" 
- href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </head>
     <body>
      
@@ -50,18 +49,29 @@
         
         @yield('content')
 
-         <!-- jQuery -->
-         <script src="/js-admin/jquery.min.js"></script>
+  <!-- jQuery -->
+  <script src="/js-admin/jquery.min.js"></script>
 
-         <!-- Bootstrap Core JavaScript -->
-         <script src="/js-admin/bootstrap.min.js"></script>
- 
-         <!-- Metis Menu Plugin JavaScript -->
-         <script src="/js-admin/metisMenu.min.js"></script>
- 
-         <!-- Custom Theme JavaScript -->
-         <script src="/js-admin/startmin.js"></script>
- 
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/js-admin/bootstrap.min.js"></script>
+
+  <!-- Metis Menu Plugin JavaScript -->
+  <script src="/js-admin/metisMenu.min.js"></script>
+
+  <!-- DataTables JavaScript -->
+  <script src="/js-admin/dataTables/jquery.dataTables.min.js"></script>
+  <script src="/js-admin/dataTables/dataTables.bootstrap.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="/js-admin/startmin.js"></script>
+
+  <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+</script>
      </body>
  </html>
  

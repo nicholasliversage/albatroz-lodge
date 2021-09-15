@@ -75,3 +75,7 @@ Route::get('/admin/blogs', [BlogsController::class, 'admin_index'])->middleware(
 //admin-users
 Route::get('/admin/users', [UsersController::class, 'admin_index'])->middleware('auth');;
 
+//admin-bookings
+Route::get('/admin/reservations', [BookingController::class, 'admin_reservations'])->middleware('auth');;
+Route::get('/admin/requests', [BookingController::class, 'admin_requests'])->middleware('auth');;
+

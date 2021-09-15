@@ -25,4 +25,9 @@ class Room extends Model
     protected $fillable = [
         'name','rooms' ,'description', 'persons', 'bed','view','imgRoom','img1','img2','img3'
     ];
+
+    public function bookings()
+    {
+        return $this->hasMany(Bookings::class);
+    }
 }
