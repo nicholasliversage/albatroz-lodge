@@ -62,11 +62,12 @@
                                   <div class="modal-content">
                                     <div class="modal-header">
                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                      <h4 class="modal-title">Reservation Request</h4>
+                                      <h4 class="modal-title" >Reservation Request</h4>
                                     </div>
                                     <div class="modal-body"> 
                                       <p id="checkid"></p>
-                                      <form id="request-form" action="">
+                                      <form id="request-form" method="POST" action="{{ route('booking.save',$booking->id) }}">
+                                       @csrf
                                         <h3>Please select a chalet:</h3>
                                           <div class="row">
                                               <div class="offset-4 col-sm-8 mt-5">
@@ -84,11 +85,13 @@
                                                   
                                               </div>
                                           </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-success" >Accept</button>
+                                          </div>
                                       </form>
                                     </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
+                                    
                                   </div>
                                 </div>
                               </div>

@@ -78,4 +78,6 @@ Route::get('/admin/users', [UsersController::class, 'admin_index'])->middleware(
 //admin-bookings
 Route::get('/admin/reservations', [BookingController::class, 'admin_reservations'])->middleware('auth');;
 Route::get('/admin/requests', [BookingController::class, 'admin_requests'])->middleware('auth');;
+Route::post('/admin/requests/{id}', [BookingController::class, 'admin_saveBooking'])->name('booking.save')->middleware('auth');;
+
 

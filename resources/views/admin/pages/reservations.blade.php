@@ -5,8 +5,8 @@
 
 <div id="page-wrapper">
     <div >
-        <h2 style="text-align:center;">Users</h2>
-        <button type="button" class="btn btn-success">Add New User</button>
+        <h2 style="text-align:center;">Bookings</h2>
+        <button type="button" class="btn btn-success">Add New Booking</button>
       </div>
       <br>
 
@@ -40,7 +40,7 @@
                                     <td>{{ $booking->user->name }}</td>
                                     <td>{{ $booking->user->email }}</td>
                                     <td>{{ $booking->user->phone }}</td>
-                                    <td>{{ $booking->rooms->name }}</td>
+                                    <td>{{ $booking->room->name }}</td>
                                     <td class="center">{{ $booking->guests }}</td>
                                     <td>{{ $booking->check_in }}</td>
                                     <td>{{ $booking->check_out}}</td>

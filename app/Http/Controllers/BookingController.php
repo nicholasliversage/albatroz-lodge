@@ -22,12 +22,23 @@ class BookingController extends Controller
         if(auth()->id()){
             $startTime = $request->get('check_in');
             $endTime = $request->get('check_out');
-            $booked = Booking::where('room_id','=',null)->get();;
-            $conflict = $booked
-                ->whereBetween('check_in', [$startTime, $endTime])
-                ->orWhereBetween('check_out', [$startTime, $endTime])
-                ->orWhere(fn ($q) => $q->where('check_in', '<', $startTime)->where('check_out', '>', $endTime))
-                ->exists();
+           
+
+               /* $conflict = Room::whereNotIn('id', function($query) use ($startTime, $endTime) {
+                    $query->from('bookings')
+                     ->select('room_id')
+                     ->where('room_id','=',null)
+                     ->whereBetween('check_in', [$startTime, $endTime])
+                     ->orWhereBetween('check_out' ,[$startTime, $endTime])
+                     ->orWhere(fn ($q) => $q->where('check_in', '<', $startTime)->where('check_out', '>', $endTime));
+                 })->get();*/
+                 $bookings = Booking::where('room_id','!=',null)->get();
+           $conflict = Booking::
+               where('room_id','!=',null)
+               ->where(fn($r) => $r->whereBetween('check_in', [$startTime, $endTime])
+             ->orWhereBetween('check_out', [$startTime, $endTime])
+             ->orWhere(fn ($q) => $q->where('check_in', '<', $startTime)->where('check_out', '>', $endTime)))
+             ->exists();
             if ($conflict) {
                 $notification = [
                     'message' => 'There is no space available for the chosen dates!', 
@@ -79,10 +90,13 @@ class BookingController extends Controller
         return view('admin.pages.requests', compact('bookings','rooms'));
       }
 
-      public function admin_saveBooking($id,$room_id){
+      public function admin_saveBooking(Request $request,$id){
+        $this->validate($request, [
+            'room' => 'required'  
+        ]);
         $booking = Booking::findOrFail($id);
-        $booking->room_id = $room_id;
+        $booking->room_id = $request->get('room');;
         $booking->save();
-        return back();
+         return back();;
       }
 }
