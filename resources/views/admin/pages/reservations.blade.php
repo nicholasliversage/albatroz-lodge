@@ -81,27 +81,25 @@
         <div class="modal-body">
             <div class="form-group">
                 <label for="sel1">Select Client:</label>
-                <select class="form-control" id="sel1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
+                <select class="form-control" id="client">
+                  @foreach ($users as $user )
+                      <option value="{{ $user->id }}">{{ $user->name }}</option>
+                  @endforeach
                 </select>
               </div>
 
               <div class="form-group">
                 <label for="sel1">Select Chalet:</label>
-                <select class="form-control" id="sel1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
+                <select class="form-control" id="chalet">
+                    @foreach ($rooms as $room )
+                    <option value="{{ $room->id }}">{{ $room->name }}</option>
+                @endforeach
                 </select>
               </div>
 
               <div class="form-group">
                 <label for="sel1">Number of Guests:</label>
-                <select class="form-control" id="sel1">
+                <select class="form-control" id="guests">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -138,7 +136,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary">Save</button>
         </div>
       </div>
     </div>

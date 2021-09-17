@@ -81,7 +81,9 @@ class BookingController extends Controller
 
       public function admin_reservations(){
           $bookings = Booking::where('room_id','!=',null)->get();
-          return view('admin.pages.reservations', compact('bookings'));
+          $users = User::where('user_type','=','Client')->get();
+          $rooms = Room::all();
+          return view('admin.pages.reservations', compact('bookings','users','rooms'));
       }
 
       public function admin_requests(){
