@@ -21,7 +21,7 @@
                             <i class="fa fa-cutlery fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
+                            <div class="huge">{{ $dishes }}</div>
                             <div>Dishes</div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                             <i class="fa fa-book fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">12</div>
+                            <div class="huge">{{ $blogs }}</div>
                             <div>Blogs</div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                             <i class="fa fa-home fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">124</div>
+                            <div class="huge">{{ $rooms }}</div>
                             <div>Chalets</div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                             <i class="fa fa-bookmark-o fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
+                            <div class="huge">{{ $requests }}</div>
                             <div>Reservion Requests</div>
                         </div>
                     </div>
@@ -109,14 +109,14 @@
 
 
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
                             <i class="fa fa-bookmark fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
+                            <div class="huge">{{ $reservations }}</div>
                             <div>Reservation</div>
                         </div>
                     </div>
@@ -135,14 +135,14 @@
 
 
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
+            <div class="panel panel-green">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
                             <i class="fa fa-user-circle fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
+                            <div class="huge">{{ $users }}</div>
                             <div>Users</div>
                         </div>
                     </div>

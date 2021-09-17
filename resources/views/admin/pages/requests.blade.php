@@ -36,7 +36,10 @@
                             </thead>
                             <tbody>
                                 @foreach ($bookings as $booking)
+                                
+                                   
                                 <tr class="odd gradeX">
+                                    
                                     <td>{{ $booking->user->name }}</td>
                                     <td>{{ $booking->user->email }}</td>
                                     <td>{{ $booking->user->phone }}</td>
@@ -45,12 +48,18 @@
                                     <td>{{ $booking->check_in }}</td>
                                     <td>{{ $booking->check_out}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger">Reject</button>
+                                        <form action="{{ route('request.delete',$booking->id) }}" method="post">
+                                            @csrf
+                                        <button type="submit" class="btn btn-danger">Reject</button>
                                         <button type="button" class="btn btn-success" data-id ="{{ $booking->id }}" 
                                         data-toggle="modal" data-target="#requestModal">Accept</button>
+                                    </form>
                                     </td>
+                                
                                 </tr>
+                                
                                 @endforeach
+
                             </tbody>
 
 

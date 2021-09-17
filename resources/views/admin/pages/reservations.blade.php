@@ -6,7 +6,7 @@
 <div id="page-wrapper">
     <div >
         <h2 style="text-align:center;">Bookings</h2>
-        <button type="button" class="btn btn-success">Add New Booking</button>
+        <button data-toggle="modal" data-target="#modalForm" type="button" class="btn btn-success">Add New Booking</button>
       </div>
       <br>
 
@@ -45,8 +45,11 @@
                                     <td>{{ $booking->check_in }}</td>
                                     <td>{{ $booking->check_out}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger">Delete</button>
+                                        <form action="{{ route('request.delete',$booking->id) }}" method="post">
+                                            @csrf
+                                        <button type="submit" class="btn btn-danger">Delete</button>
                                         <button type="button" class="btn btn-primary">Edit</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -63,4 +66,86 @@
     </div>
 
 </div>
+
+
+
+<div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Booking</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="sel1">Select Client:</label>
+                <select class="form-control" id="sel1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sel1">Select Chalet:</label>
+                <select class="form-control" id="sel1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sel1">Number of Guests:</label>
+                <select class="form-control" id="sel1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                </select>
+              </div>
+
+              <div class="row">
+                <div class='col-sm-3'>
+                    <div class="form-group">
+                        <label for="cin">Check-in Date</label>
+                      <div class="input-group date" data-provide="datepicker" style="width:300px; display:table">
+                          <input id="cin" name="cin" type="text" class="form-control" placeholder="MM/DD/YYYY" style="display:table-cell; width:100%">
+                          <div class="input-group-addon">
+                              <span class="glyphicon glyphicon-th"></span>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cin">Check-out Date</label>
+                        <div class="input-group date" data-provide="datepicker" style="width:300px; display:table">
+                            <input type="text" class="form-control" placeholder="MM/DD/YYYY" style="display:table-cell; width:100%">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                          </div>
+                      </div>
+                </div>
+            </div>
+             
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
 @endsection
+
+
+  

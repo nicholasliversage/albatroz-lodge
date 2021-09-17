@@ -52,9 +52,7 @@ Route::post('/booking', [BookingController::class, 'store'])->name('booking.make
 Auth::routes();
 
 // dashboard
-Route::get('/dashboard', function() {
-    return view('admin.dashboard');
-  })->middleware('auth');
+Route::get('/dashboard', [HomeController::class, 'admin_index'])->middleware('auth');
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Registration
@@ -79,5 +77,5 @@ Route::get('/admin/users', [UsersController::class, 'admin_index'])->middleware(
 Route::get('/admin/reservations', [BookingController::class, 'admin_reservations'])->middleware('auth');;
 Route::get('/admin/requests', [BookingController::class, 'admin_requests'])->middleware('auth');;
 Route::post('/admin/requests/{id}', [BookingController::class, 'admin_saveBooking'])->name('booking.save')->middleware('auth');;
-
+Route::post('/admin/requests/remove/{id}',[BookingController::class, 'admin_removeRequest'] )->name('request.delete')->middleware('auth');;;
 

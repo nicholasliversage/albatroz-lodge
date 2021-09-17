@@ -99,4 +99,10 @@ class BookingController extends Controller
         $booking->save();
          return back();;
       }
+
+      public function admin_removeRequest($id){
+          $booking = Booking::findOrFail($id)->delete();
+          
+          return back();
+      }
 }

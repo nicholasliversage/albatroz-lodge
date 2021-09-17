@@ -39,7 +39,8 @@
         <![endif]-->
 
       
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
     </head>
     <body>
      
@@ -65,6 +66,16 @@
   <!-- Custom Theme JavaScript -->
   <script src="/js-admin/startmin.js"></script>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.en-GB.min.js" charset="UTF-8"></script>
+  
+<script>
+    $( document ).ready(function() {
+      $('#datepicker').datepicker();
+    });
+    </script>
+  
   <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
