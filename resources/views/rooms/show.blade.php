@@ -42,13 +42,13 @@
                 
             
 
-                
+                 
             </div>
         </div> <!-- .col-md-8 -->
         <div class="col-lg-4 sidebar ftco-animate pl-md-5">
           <div class="sidebar-box">
            <div class="col-md-12 room-single mt-4 mb-5 ftco-animate">
-                    <h2 class="mb-4">{{ $room->name }} <span> - ({{ $room->rooms }} Available rooms)</span></h2>
+                    <h2 class="mb-4 ">{{ $room->name }} <span style="color: #007bff;"> - ({{ $room->rooms }} Available rooms)</span></h2>
                           <p>{{ $room->description }}</p>
                           <div class="d-md-flex mt-5 mb-5">
                               <ul class="list">

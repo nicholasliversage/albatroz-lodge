@@ -22,6 +22,12 @@ class HomeController extends Controller
         return view('pages.index', compact('rooms','dishes','blogs','reviews'));
     }
 
+    public function about(){
+        $reviews = Reviews::all();
+
+        return view('about.index', compact('reviews'));
+    }
+
     public function admin_index(){
         $reservations = Booking::where('room_id','!=',null)->count();
         $requests = Booking::where('room_id','=',null)->count();

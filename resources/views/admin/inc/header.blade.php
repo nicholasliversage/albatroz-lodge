@@ -1,15 +1,14 @@
 
             <!-- Navigation -->
             <nav class="navbar navbar-dark bg-primary ">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/dashboard">Albatroz-Admin</a>
+                <div class="navbar-header" >
+
+                    <a style="color:white;" class="navbar-brand bg-primary" href="/dashboard">Albatroz-Admin</a>
                 </div>
-
-               
                
                
 
-                <ul class="nav navbar-right navbar-top-links">
+                <ul style="margin-top: 10px;" class="nav navbar-right navbar-top-links">
                     @if (Auth::guest() == false)
                     <li >
                         <button type="button" class="btn btn-primary dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" href="#">

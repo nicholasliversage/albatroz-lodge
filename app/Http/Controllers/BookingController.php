@@ -24,14 +24,7 @@ class BookingController extends Controller
             $endTime = $request->get('check_out');
            
 
-               /* $conflict = Room::whereNotIn('id', function($query) use ($startTime, $endTime) {
-                    $query->from('bookings')
-                     ->select('room_id')
-                     ->where('room_id','=',null)
-                     ->whereBetween('check_in', [$startTime, $endTime])
-                     ->orWhereBetween('check_out' ,[$startTime, $endTime])
-                     ->orWhere(fn ($q) => $q->where('check_in', '<', $startTime)->where('check_out', '>', $endTime));
-                 })->get();*/
+            
                  $bookings = Booking::where('room_id','!=',null)->get();
            $conflict = Booking::
                where('room_id','!=',null)
@@ -106,5 +99,26 @@ class BookingController extends Controller
           $booking = Booking::findOrFail($id)->delete();
           
           return back();
+      }
+
+      public function admin_newReservation(Request $request){
+        $this->validate($request, [
+            'cin' => 'required',
+            'cout' => 'required',
+            'guests' => 'required',
+            'client' => 'required',
+            'chalet' => 'required',
+        ]);  
+        
+        $id =$request->get('client');
+        $user = User::find($id) ;
+        $booking = new Booking();
+        $booking->check_in = $request->get('cin');
+        $booking->check_out = $request->get('cout');
+        $booking->guests = $request->get('guests');
+        $booking->room_id = $request->get('chalet');
+        $user->bookings()->save($booking);
+
+        return back();
       }
 }

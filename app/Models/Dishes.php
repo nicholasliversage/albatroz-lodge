@@ -22,6 +22,6 @@ class Dishes extends Model
      * @var array
      */
     protected $fillable = [
-        'name','description','price','imgDishes','special','category'
+        'name','description','price','imgDish','special','category'
     ];
 }

@@ -23,11 +23,20 @@ class Room extends Model
      * @var array
      */
     protected $fillable = [
-        'name','rooms' ,'description', 'persons', 'bed','view','imgRoom','img1','img2','img3'
+        'name','rooms' ,'description','price', 'persons', 'bed','view','imgRoom','img1','img2','img3'
     ];
 
     public function bookings()
     {
-        return $this->hasMany(Bookings::class,'id');
+        return $this->hasMany(Booking::class,'id');
+    }
+
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($room) { // before delete() method call this
+             $room->bookings()->each(function($booking) {
+                $booking->delete(); // <-- direct deletion
+             });   
+        });
     }
 }

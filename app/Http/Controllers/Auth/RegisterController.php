@@ -69,17 +69,6 @@ class RegisterController extends Controller
         session()->flash('notification', $notification);
          return redirect()->back();
      }
-
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:15', 'min:8'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
-
     /**
      * Create a new user instance after a valid registration.
      *

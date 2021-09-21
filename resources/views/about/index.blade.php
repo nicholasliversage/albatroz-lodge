@@ -93,8 +93,8 @@
           <div class="container">
               <div class="row no-gutters">
                   <div class="col-md-7 order-md-last d-flex">
-                      <div class="img img-1 mr-md-2 ftco-animate" style="background-image: url(images/about-1.jpg);"></div>
-                      <div class="img img-2 ml-md-2 ftco-animate" style="background-image: url(images/about-2.jpg);"></div>
+                      <div class="img img-1 mr-md-2 ftco-animate" style="background-image: url(images/ab-1.jpg);"></div>
+                      <div class="img img-2 ml-md-2 ftco-animate" style="background-image:  url(images/view-8.jpg);"></div>
                   </div>
                   <div class="col-md-5 wrap-about pb-md-3 ftco-animate pr-md-5 pb-md-5 pt-md-4">
             <div class="heading-section mb-4 my-5 my-md-0">
@@ -106,91 +106,57 @@
 Accommodating 4-6 per unit, including laundry, night watchman and braai area with charcoal. 
 
 You will find kilometers of sun bleached beaches, sea life in abundance and a fisherman's paradise.</p>
-            <p><a href="#" class="btn btn-secondary rounded">Reserve Your Room Now</a></p>
+            <p><a href="/rooms" class="btn btn-secondary rounded">View Our Chalets</a></p>
                   </div>
               </div>
           </div>
       </section>
 
-  <section class="testimony-section">
-    <div class="container">
-      <div class="row no-gutters ftco-animate justify-content-center">
-          <div class="col-md-5 d-flex">
-              <div class="testimony-img aside-stretch-2" style="background-image: url(images/testimony-img.jpg);"></div>
-          </div>
-        <div class="col-md-7 py-5 pl-md-5">
-            <div class="py-md-5">
-                <div class="heading-section ftco-animate mb-4">
-                    <span class="subheading">Testimony</span>
-                    <h2 class="mb-0">Happy Customer</h2>
-                  </div>
-              <div class="carousel-testimony owl-carousel ftco-animate">
-                <div class="item">
-                  <div class="testimony-wrap pb-4">
-                    <div class="text">
-                      <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                    </div>
-                    <div class="d-flex">
-                        <div class="user-img" style="background-image: url(images/person_1.jpg)">
-                        </div>
-                        <div class="pos ml-3">
-                            <p class="name">Gerald Hodson</p>
-                          <span class="position">Businessman</span>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="testimony-wrap pb-4">
-                    <div class="text">
-                      <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                    </div>
-                    <div class="d-flex">
-                        <div class="user-img" style="background-image: url(images/person_2.jpg)">
-                        </div>
-                        <div class="pos ml-3">
-                            <p class="name">Gerald Hodson</p>
-                          <span class="position">Businessman</span>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="testimony-wrap pb-4">
-                    <div class="text">
-                      <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                    </div>
-                    <div class="d-flex">
-                        <div class="user-img" style="background-image: url(images/person_3.jpg)">
-                        </div>
-                        <div class="pos ml-3">
-                            <p class="name">Gerald Hodson</p>
-                          <span class="position">Businessman</span>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="testimony-wrap pb-4">
-                    <div class="text">
-                      <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                    </div>
-                    <div class="d-flex">
-                        <div class="user-img" style="background-image: url(images/person_4.jpg)">
-                        </div>
-                        <div class="pos ml-3">
-                            <p class="name">Gerald Hodson</p>
-                          <span class="position">Businessman</span>
-                        </div>
-                      </div>
-                  </div>
-                </div>
+      <section class="testimony-section">
+        <div class="container">
+          <div class="row no-gutters ftco-animate justify-content-center">
+              <div class="col-md-5 d-flex">
+                  <div class="testimony-img aside-stretch-2" style="background-image: url(images/view-8.jpg);"></div>
               </div>
+            <div class="col-md-7 py-5 pl-md-5">
+                <div class="py-md-5">
+                    <div class="heading-section ftco-animate mb-4">
+                        <span class="subheading">Reviews</span>
+                        <h2 class="mb-0">Happy Customer</h2>
+                      </div>
+                  <div class="carousel-testimony owl-carousel ftco-animate">
+      
+                    @foreach ($reviews as $review)
+                    <div class="item">
+                      <div class="testimony-wrap pb-4">
+                        <div class="text">
+                          <p class="mb-4">{{ $review->description }}</p>
+                        </div>
+                        <div class="d-flex">
+                            <div class="user-img" style="background-image: url(images/profile-1.jpg)">
+                            </div>
+                            <div class="pos ml-3">
+                                <p class="name">{{ $review->user->name }}</p>
+                              <span class="position">Customer</span>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    @endforeach
+                            
+                  </div>
+                </div>
+      
+                <div class="col-md-12 text-center ftco-animate">
+                  <p><a href="#" class="btn btn-secondary rounded" data-toggle="modal" data-target="#reviewModal">Leave a Review</a></p>
+                </div>
+      
             </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      
+        
+      </section>
       
       <section class="instagram ftco-section ftco-no-pb">
     <div class="container-fluid">

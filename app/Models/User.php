@@ -58,4 +58,20 @@ class User extends Authenticatable
     {
         return $this->hasMany(Reviews::class);
     }
+
+
+  
+
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($user) { // before delete() method call this
+             $user->bookings()->each(function($booking) {
+                $booking->delete(); // <-- direct deletion
+             });
+             // do the rest of the cleanup...
+             $user->comments()->each(function($comment) {
+                $comment->delete(); // <-- direct deletion
+             });
+        });
+    }
 }

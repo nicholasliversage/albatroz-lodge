@@ -5,8 +5,7 @@
 
 <div id="page-wrapper">
     <div >
-        <h2 style="text-align:center;">Users</h2>
-        <button type="button" class="btn btn-success">Add New User</button>
+        <h2 style="text-align:center;">Booking Requests</h2>
       </div>
       <br>
 
@@ -50,9 +49,8 @@
                                     <td>
                                         <form action="{{ route('request.delete',$booking->id) }}" method="post">
                                             @csrf
-                                        <button type="submit" class="btn btn-danger">Reject</button>
-                                        <button type="button" class="btn btn-success" data-id ="{{ $booking->id }}" 
-                                        data-toggle="modal" data-target="#requestModal">Accept</button>
+                                        <button onclick="return confirm('Are you sure you want to delete this request?');" type="submit" class="btn btn-danger">Reject</button>
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#requestModal">Accept</button>
                                     </form>
                                     </td>
                                 
@@ -65,48 +63,9 @@
 
 
 
-                            <!-- Modal Example Start-->
-                            <div id="requestModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                      <h4 class="modal-title" >Reservation Request</h4>
-                                    </div>
-                                    <div class="modal-body"> 
-                                      <p id="checkid"></p>
-                                      <form id="request-form" method="POST" action="{{ route('booking.save',$booking->id) }}">
-                                       @csrf
-                                        <h3>Please select a chalet:</h3>
-                                          <div class="row">
-                                              <div class="offset-4 col-sm-8 mt-5">
-                                                  @foreach ($rooms as $room)
-                                                  @if($room->booking != null)
-                                                  @if(($room->booking->has('check_in','<=',$booking->check_in)) && ($room->booking->has('check_out','>=',$booking->check_out)))
-                                                  
-                                                  <input type="checkbox" name="room" value="{{ $room->id }}"> {{ $room->name }} <br>
+    
 
-                                                  @endif
-                                                  @else
-                                                  <input type="checkbox" name="room" value="{{ $room->id }}"> {{ $room->name }} <br>
-                                                   @endif
-                                                  @endforeach
-                                                  
-                                              </div>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-success" >Accept</button>
-                                          </div>
-                                      </form>
-                                    </div>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              
-	 <!-- Modal Example End-->
+                           
                         </table>
                     </div>
                    
@@ -120,5 +79,50 @@
 
 </div>
 
+@if ($bookings->count() > 0)
+    
+
+ <!-- Modal Example Start-->
+ <div id="requestModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" >Reservation Request</h4>
+        </div>
+        <div class="modal-body"> 
+         
+          <form id="request-form" method="POST" action="{{ route('booking.save',$booking->id) }}">
+           @csrf
+            <h3>Please select a chalet:</h3>
+              <div class="row">
+                  <div class="offset-4 col-sm-8 mt-5">
+                      @foreach ($rooms as $room)
+                      @if($room->booking != null)
+                      @if(($room->booking->has('check_in','<=',$booking->check_in)) && ($room->booking->has('check_out','>=',$booking->check_out)))
+                      
+                      <input type="checkbox" name="room" value="{{ $room->id }}"> {{ $room->name }} <br>
+
+                      @endif
+                      @else
+                      <input type="checkbox" name="room" value="{{ $room->id }}"> {{ $room->name }} <br>
+                       @endif
+                      @endforeach
+                      
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success" >Accept</button>
+              </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  @endif
+<!-- Modal Example End-->
 
 @endsection

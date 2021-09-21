@@ -204,9 +204,9 @@
           </div>
           <p>Our exclusive restaurant and fully stocked bar offers mouth watering Mozambiquian cuisine. 
            Relax while enjoying a sundowner, looking out over Tofo Bay.</p>
-          <p><a href="/rooms" class="btn btn-secondary rounded">Reserve Your Room Now</a></p>
+          <p><a href="/rooms" class="btn btn-secondary rounded">View Our Chalets</a></p>
                 </div>
-            </div>
+            </div> 
         </div>
     </section>
 

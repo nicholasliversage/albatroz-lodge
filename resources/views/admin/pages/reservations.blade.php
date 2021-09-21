@@ -47,7 +47,7 @@
                                     <td>
                                         <form action="{{ route('request.delete',$booking->id) }}" method="post">
                                             @csrf
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button onclick="return confirm('Are you sure you want to delete this booking?');" type="submit" class="btn btn-danger">Delete</button>
                                         <button type="button" class="btn btn-primary">Edit</button>
                                         </form>
                                     </td>
@@ -79,9 +79,12 @@
           </button>
         </div>
         <div class="modal-body">
+            <form method="POST" action="{{ route('reservation.save') }}">
+                @csrf
             <div class="form-group">
+                
                 <label for="sel1">Select Client:</label>
-                <select class="form-control" id="client">
+                <select class="form-control" name="client" id="client">
                   @foreach ($users as $user )
                       <option value="{{ $user->id }}">{{ $user->name }}</option>
                   @endforeach
@@ -90,7 +93,7 @@
 
               <div class="form-group">
                 <label for="sel1">Select Chalet:</label>
-                <select class="form-control" id="chalet">
+                <select class="form-control" name="chalet" id="chalet">
                     @foreach ($rooms as $room )
                     <option value="{{ $room->id }}">{{ $room->name }}</option>
                 @endforeach
@@ -98,14 +101,14 @@
               </div>
 
               <div class="form-group">
-                <label for="sel1">Number of Guests:</label>
-                <select class="form-control" id="guests">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
+                <label for="guests">Number of Guests:</label>
+                <select class="form-control" name="guests" id="guests">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
                 </select>
               </div>
 
@@ -122,9 +125,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="cin">Check-out Date</label>
+                        <label for="cout">Check-out Date</label>
                         <div class="input-group date" data-provide="datepicker" style="width:300px; display:table">
-                            <input type="text" class="form-control" placeholder="MM/DD/YYYY" style="display:table-cell; width:100%">
+                            <input name="cout" id="cout" type="text" class="form-control" placeholder="MM/DD/YYYY" style="display:table-cell; width:100%">
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-th"></span>
                             </div>
@@ -132,12 +135,14 @@
                       </div>
                 </div>
             </div>
-             
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+            </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save</button>
-        </div>
+       
       </div>
     </div>
   </div>

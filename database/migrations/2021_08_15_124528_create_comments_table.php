@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->unsignedInteger('blogs_id');
             $table->unsignedInteger('user_id');
             $table->timestamps();
+            
         });
     }
 

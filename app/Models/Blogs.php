@@ -29,4 +29,13 @@ class Blogs extends Model
     {
         return $this->hasMany(Comments::class);
     }
+
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($blog) { // before delete() method call this
+             $blog->comments()->each(function($comment) {
+                $comment->delete(); // <-- direct deletion
+             });   
+        });
+    }
 }

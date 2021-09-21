@@ -21,6 +21,8 @@ class CreateBookingMigration extends Migration
             $table->string('check_in');
             $table->string('check_out');
             $table->timestamps();
+
+            
         });
     }
 
