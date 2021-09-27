@@ -9,7 +9,11 @@ class UsersController extends Controller
     //
     public function admin_index(){
 
+        if(auth()->user()->user_type == 'Administrator')
         $users = User::all();
+        else
+        $users = User::where('user_type','=','Client')->get();
+
         return view('admin.pages.users', compact('users'));
     }
 

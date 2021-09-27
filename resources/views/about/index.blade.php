@@ -8,8 +8,8 @@
       <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
             <div class="text">
-              <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Home</a></span> <span>About Us</span></p>
-              <h1 class="mb-4 bread">About Albatroz</h1>
+              <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">{{ __('messages.home') }}</a></span> <span>{{ __('messages.about') }}</span></p>
+              <h1 class="mb-4 bread">{{ __('messages.ab') }} Albatroz</h1>
           </div>
         </div>
       </div>
@@ -20,8 +20,8 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
         <div class="col-md-7 heading-section text-center ftco-animate">
-            <span class="subheading">Welcome to Albatroz</span>
-          <h2 class="mb-4">You'll Never Want To Leave</h2>
+            <span class="subheading">{{ __('messages.welcome') }} Albatroz</span>
+          <h2 class="mb-4">{{ __('messages.youll') }}</h2>
         </div>
       </div>  
       <div class="row d-flex">
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="media-body">
-              <h3 class="heading mb-3">Friendly Service</h3>
+              <h3 class="heading mb-3">{{ __('messages.fservice') }}</h3>
             </div>
           </div>      
         </div>
@@ -45,34 +45,11 @@
                 </div>
             </div>
             <div class="media-body">
-              <h3 class="heading mb-3">Get Breakfast</h3>
+              <h3 class="heading mb-3">{{ __('messages.gbreakfast') }}</h3>
             </div>
           </div>    
         </div>
-        <div class="col-md px-md-1 d-flex align-sel Searchf-stretch ftco-animate">
-          <div class="media block-6 services py-4 d-block text-center">
-            <div class="d-flex justify-content-center">
-                <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="flaticon-car"></span>
-                </div>
-            </div>
-            <div class="media-body">
-              <h3 class="heading mb-3">Transfer Services</h3>
-            </div>
-          </div>      
-        </div>
-        <div class="col-md px-md-1 d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services py-4 d-block text-center">
-            <div class="d-flex justify-content-center">
-                <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="flaticon-spa"></span>
-                </div>
-            </div>
-            <div class="media-body">
-              <h3 class="heading mb-3">Suits &amp; SPA</h3>
-            </div>
-          </div>      
-        </div>
+        
         <div class="col-md pl-md-1 d-flex align-self-stretch ftco-animate">
           <div class="media block-6 services py-4 d-block text-center">
             <div class="d-flex justify-content-center">
@@ -81,7 +58,7 @@
                 </div>
             </div>
             <div class="media-body">
-              <h3 class="heading mb-3">Cozy Rooms</h3>
+              <h3 class="heading mb-3">{{ __('messages.crooms') }}</h3>
             </div>
           </div>      
         </div>
@@ -98,15 +75,13 @@
                   </div>
                   <div class="col-md-5 wrap-about pb-md-3 ftco-animate pr-md-5 pb-md-5 pt-md-4">
             <div class="heading-section mb-4 my-5 my-md-0">
-                <span class="subheading">About Albatroz</span>
-              <h2 class="mb-4">Albatroz the Most Recommended Lodge in Tofo</h2>
+                <span class="subheading">{{ __('messages.ab') }} Albatroz</span>
+              <h2 class="mb-4">Albatroz {{ __('messages.mostrec') }} Tofo</h2>
             </div>
-            <p>Nestling in the sand dunes of Inhambane, mozambique overlooking Tofo Bay we offer exclusive accommodation in our fully catered or self catered, en-suit chalets.
+            <p>{{ __('messages.nestling') }}
 
-Accommodating 4-6 per unit, including laundry, night watchman and braai area with charcoal. 
-
-You will find kilometers of sun bleached beaches, sea life in abundance and a fisherman's paradise.</p>
-            <p><a href="/rooms" class="btn btn-secondary rounded">View Our Chalets</a></p>
+            {{ __('messages.accomodation') }}</p>
+            <p><a href="/rooms" class="btn btn-secondary rounded">{{ __('messages.vchalets') }}</a></p>
                   </div>
               </div>
           </div>
@@ -121,8 +96,8 @@ You will find kilometers of sun bleached beaches, sea life in abundance and a fi
             <div class="col-md-7 py-5 pl-md-5">
                 <div class="py-md-5">
                     <div class="heading-section ftco-animate mb-4">
-                        <span class="subheading">Reviews</span>
-                        <h2 class="mb-0">Happy Customer</h2>
+                        <span class="subheading">{{ __('messages.reviews') }}</span>
+                        <h2 class="mb-0">{{ __('messages.happy') }}</h2>
                       </div>
                   <div class="carousel-testimony owl-carousel ftco-animate">
       
@@ -137,7 +112,7 @@ You will find kilometers of sun bleached beaches, sea life in abundance and a fi
                             </div>
                             <div class="pos ml-3">
                                 <p class="name">{{ $review->user->name }}</p>
-                              <span class="position">Customer</span>
+                              <span class="position">{{ __('messages.customer') }}</span>
                             </div>
                           </div>
                       </div>
@@ -162,8 +137,8 @@ You will find kilometers of sun bleached beaches, sea life in abundance and a fi
     <div class="container-fluid">
       <div class="row no-gutters justify-content-center pb-5">
         <div class="col-md-7 text-center heading-section ftco-animate">
-            <span class="subheading">Photos</span>
-          <h2><span>Instagram</span></h2>
+            <span class="subheading">{{ __('messages.photos') }}</span>
+          <h2><span>{{ __('messages.gallery') }}</span></h2>
         </div>
       </div>
       <div class="row no-gutters">

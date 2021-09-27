@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">{{ __('messages.adminpanel') }}</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -22,13 +22,13 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{ $dishes }}</div>
-                            <div>Dishes</div>
+                            <div>{{ __('messages.dishes') }}</div>
                         </div>
                     </div>
                 </div>
                 <a href="/admin/dishes">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">{{ __('messages.viewdetails') }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                         <div class="clearfix"></div>
@@ -51,7 +51,7 @@
                 </div>
                 <a href="/admin/blogs">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">{{ __('messages.viewdetails') }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                         <div class="clearfix"></div>
@@ -68,13 +68,13 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{ $rooms }}</div>
-                            <div>Chalets</div>
+                            <div>{{ __('messages.chalets') }}</div>
                         </div>
                     </div>
                 </div>
                 <a href="/admin/rooms">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">{{ __('messages.viewdetails') }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                         <div class="clearfix"></div>
@@ -91,13 +91,13 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{ $requests }}</div>
-                            <div>Reservion Requests</div>
+                            <div>{{ __('messages.requests') }}</div>
                         </div>
                     </div>
                 </div>
                 <a href="/admin/requests">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">{{ __('messages.viewdetails') }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                         <div class="clearfix"></div>
@@ -117,13 +117,13 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{ $reservations }}</div>
-                            <div>Reservation</div>
+                            <div>{{ __('messages.reservations') }}</div>
                         </div>
                     </div>
                 </div>
                 <a href="/admin/reservations">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">{{ __('messages.viewdetails') }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                         <div class="clearfix"></div>
@@ -143,13 +143,13 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{ $users }}</div>
-                            <div>Users</div>
+                            <div>{{ __('messages.users') }}</div>
                         </div>
                     </div>
                 </div>
                 <a href="/admin/users">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">{{ __('messages.viewdetails') }}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                         <div class="clearfix"></div>

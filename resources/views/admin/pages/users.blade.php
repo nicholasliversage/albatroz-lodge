@@ -5,8 +5,8 @@
 
 <div id="page-wrapper">
     <div >
-        <h2 style="text-align:center;">Users</h2>
-        <button data-toggle="modal" data-target="#modalForm" type="button" class="btn btn-success">Add New User</button>
+        <h2 style="text-align:center;">{{ __('messages.users') }}</h2>
+        <button data-toggle="modal" data-target="#modalForm" type="button" class="btn btn-success">{{ __('messages.addnew') }} {{ __('messages.user') }}</button>
       </div>
       <br>
 
@@ -16,7 +16,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Users Table
+                    {{ __('messages.users') }} {{ __('messages.table') }}
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -24,12 +24,12 @@
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th>{{ __('messages.name') }}</th>
                                     <th>Email</th>
-                                    <th>User Type</th>
-                                    <th>Phone</th>
-                                    <th>Nr Reservations</th>
-                                    <th>Options</th>
+                                    <th>{{ __('messages.user') }} Type</th>
+                                    <th>{{ __('messages.phone') }}</th>
+                                    <th>Nr {{ __('messages.reservations') }}</th>
+                                    <th>{{ __('messages.options') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,15 +37,16 @@
                                 <tr class="odd gradeX">
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    
                                     <td>{{ $user->user_type }}</td>
                                     <td class="center">{{ $user->phone }}</td>
                                     <td class="center">{{ $user->bookings->count() }}</td>
                                     <td>
                                     <form action="{{ route('user.remove',$user->id) }}" method="POST">
                                         @csrf
-                                        <button type="submit" onclick="return confirm('Are you sure you want to remove this user?');" class="btn btn-danger">Delete</button>
+                                        <button type="submit" onclick="return confirm('Are you sure ?');" class="btn btn-danger">Delete</button>
                                     
-                                        <button data-toggle="modal" data-target="#modalFormEdit"  type="button" class="btn btn-primary">Edit</button>
+                                        <button data-toggle="modal" data-target="#modalFormEdit"  type="button" class="btn btn-primary">{{ __('messages.edit') }}</button>
                                     </form>
                                     </td>
                                 </tr>
@@ -71,7 +72,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New User</h5>
+          <h5 class="modal-title" id="exampleModalLabel">{{ __('messages.addnew') }}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -83,7 +84,7 @@
                 <input name="register" type="hidden" value="1">
 
                 <div class="form-group">
-                    <label for="nameInput" ">{{ __('Name') }}</label>
+                    <label for="nameInput" ">{{ __('messages.name') }}</label>
                         <input id="nameInput" type="text" class="form-control" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
                         @if ($errors->has('name'))
                         <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -91,7 +92,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="emailInput">{{ __('E-Mail Address') }}</label>
+                    <label for="emailInput">{{ __('E-Mail ') }}</label>
                         <input id="emailInput" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email">
                         @if ($errors->has('email'))
                         <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -99,7 +100,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phoneInput">{{ __('Phone Number') }}</label>
+                    <label for="phoneInput">{{ __('messages.phone') }}</label>
                         <input id="phoneInput" type="phone" class="form-control" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
                         @if ($errors->has('phone'))
                         <span class="text-danger">{{ $errors->first('phone') }}</span>
@@ -107,11 +108,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="guests">User Type:</label>
+                    <label for="guests">{{ __('messages.user') }} {{ __('messages.type') }}:</label>
                     <select class="form-control" name="type" id="type">
-                      <option value="Administrator">Administrator</option>
-                      <option value="Client">Client</option>
-                      <option value="Manager">Manager</option>
+                        @if ( Auth::user()->user_type == 'Administrator')
+                      <option value="Administrator">{{ __('messages.administrator') }}</option>
+                      <option value="Manager">{{ __('messages.manager') }}</option>
+                        @endif
+                      <option value="Client">{{ __('messages.customer') }}</option>
                     </select>
                   </div>
 
@@ -128,7 +131,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password-confirm" >{{ __('Confirm Password') }}</label>
+                    <label for="password-confirm" >{{ __('messages.confirm') }}</label>
 
                     
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -136,8 +139,8 @@
                 
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('messages.close') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('messages.save') }}</button>
                 </div>
             </form>
         </div>
@@ -146,6 +149,8 @@
     </div>
   </div>
 
+@if ($users->count() > 0)
+    
 
   <div class="modal fade" id="modalFormEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -163,7 +168,7 @@
                 <input name="register" type="hidden" value="1">
 
                 <div class="form-group">
-                    <label for="nameInput" ">{{ __('Name') }}</label>
+                    <label for="nameInput" ">{{ __('messages.name') }}</label>
                         <input id="nameInput" type="text" class="form-control" name="name" value="{{ $user->name }}"  autocomplete="name" autofocus>
                         @if ($errors->has('name'))
                         <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -171,7 +176,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="emailInput">{{ __('E-Mail Address') }}</label>
+                    <label for="emailInput">{{ __('E-Mail') }}</label>
                         <input id="emailInput" type="email" class="form-control" name="email" value="{{ $user->email }}" required autocomplete="email">
                         @if ($errors->has('email'))
                         <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -179,7 +184,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phoneInput">{{ __('Phone Number') }}</label>
+                    <label for="phoneInput">{{ __('messages.phone') }}</label>
                         <input id="phoneInput" type="phone" class="form-control" name="phone" value="{{ $user->phone }}" required autocomplete="phone">
                         @if ($errors->has('phone'))
                         <span class="text-danger">{{ $errors->first('phone') }}</span>
@@ -187,18 +192,21 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="guests">User Type:</label>
+                    <label for="guests">{{ __('messages.user') }} {{ __('messages.type') }}:</label>
                     <select class="form-control" name="type" id="type">
-                      <option value="{{ $user->user_type }}" hidden selected>Change User Type?</option>
-                      <option value="Administrator">Administrator</option>
-                      <option value="Client">Client</option>
-                      <option value="Manager">Manager</option>
+                      <option value="{{ $user->user_type }}" hidden selected>{{ $user->user_type }}</option>
+                      @if ( Auth::user()->user_type == 'Administrator')
+                      <option value="Administrator">{{ __('messages.administrator') }}</option>
+                      <option value="Manager">{{ __('messages.manager') }}</option>
+                      @endif
+                      <option value="Client">{{ __('messages.customer') }}</option>
+
                     </select>
                   </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('messages.close') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('messages.save') }}</button>
                 </div>
             </form>
         </div>
@@ -206,6 +214,7 @@
       </div>
     </div>
   </div>
+  @endif
 @endsection
 
  

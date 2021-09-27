@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<nav  class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
       <img src="/images/logo.png" alt="logo" />
       <a class="navbar-brand" href="/">Albatroz<span> Lodge</span></a>
@@ -8,17 +8,13 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/rooms" class="nav-link">Our Rooms</a></li>
-          <li class="nav-item"><a href="/restaurant" class="nav-link">Restaurant</a></li>
-          <li class="nav-item"><a href="/about" class="nav-link">About Us</a></li>
+          <li class="nav-item active"><a href="/" class="nav-link">{{ __('messages.home') }}</a></li>
+          <li class="nav-item"><a href="/rooms" class="nav-link">{{ __('messages.chalets') }}</a></li>
+          <li class="nav-item"><a href="/restaurant" class="nav-link">{{ __('messages.rest') }}</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link">{{ __('messages.about') }}</a></li>
           <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-        </ul>
-
-
-          <!-- Right Side Of Navbar -->
-          <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="/contact" class="nav-link">{{ __('messages.contact') }}</a></li>
+       
             <!-- Authentication Links -->
             @guest
                 <li class="nav-item">
@@ -26,7 +22,7 @@
                 </li>
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" style="cursor: pointer" data-toggle="modal" data-target="#registerModal">{{ __('Register') }}</a>
+                        <a class="nav-link" style="cursor: pointer" data-toggle="modal" data-target="#registerModal">{{ __('messages.register') }}</a>
                     </li>
                 @endif
             @else
@@ -45,10 +41,32 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+
+                        @if (Auth::user()->user_type == 'Administrator' || Auth::user()->user_type == 'Manager' )
+                        <a href="/login" class="dropdown-item">{{ __('messages.adminpanel') }}</a>
+                        @endif
+
                     </div>
                 </li>
             @endguest
+
+            
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  @foreach (Config::get('languages') as $lang => $language)
+      @if ($lang != App::getLocale())
+              <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a>
+      @endif
+  @endforeach
+  </div>
+</li>
+
         </ul>
+
+       
       </div>
     </div>
   </nav>

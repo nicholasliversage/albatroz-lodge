@@ -5,8 +5,8 @@
 
 <div id="page-wrapper">
     <div >
-        <h2 style="text-align:center;">Bookings</h2>
-        <button data-toggle="modal" data-target="#modalForm" type="button" class="btn btn-success">Add New Booking</button>
+        <h2 style="text-align:center;">{{ __('messages.bookings') }}s</h2>
+        <button data-toggle="modal" data-target="#modalForm" type="button" class="btn btn-success">{{ __('messages.addnew') }} {{ __('messages.bookings') }}</button>
       </div>
       <br>
 
@@ -16,7 +16,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Bookings Table
+                  {{ __('messages.bookingstable') }}
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -24,14 +24,14 @@
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>Client Name</th>
+                                    <th>{{ __('messages.customer') }} </th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Chalet</th>
-                                    <th>Persons</th>
-                                    <th>Check In</th>
-                                    <th>Check Out</th>
-                                    <th>Options</th>
+                                    <th>{{ __('messages.phone') }}</th>
+                                    <th>{{ __('messages.chalets') }}</th>
+                                    <th>{{ __('messages.persons') }}</th>
+                                    <th>{{ __('messages.checkin') }}</th>
+                                    <th>{{ __('messages.checkout') }}</th>
+                                    <th>{{ __('messages.options') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,8 +47,8 @@
                                     <td>
                                         <form action="{{ route('request.delete',$booking->id) }}" method="post">
                                             @csrf
-                                        <button onclick="return confirm('Are you sure you want to delete this booking?');" type="submit" class="btn btn-danger">Delete</button>
-                                        <button type="button" class="btn btn-primary">Edit</button>
+                                        <button onclick="return confirm('Are you sure?');" type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="button" class="btn btn-primary">{{ __('messages.edit') }}</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -73,7 +73,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New Booking</h5>
+          <h5 class="modal-title" id="exampleModalLabel">{{ __('messages.new') }} {{ __('messages.bookings') }}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -83,7 +83,7 @@
                 @csrf
             <div class="form-group">
                 
-                <label for="sel1">Select Client:</label>
+                <label for="sel1">{{ __('messages.customer') }}:</label>
                 <select class="form-control" name="client" id="client">
                   @foreach ($users as $user )
                       <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -92,7 +92,7 @@
               </div>
 
               <div class="form-group">
-                <label for="sel1">Select Chalet:</label>
+                <label for="sel1">{{ __('messages.chalets') }}:</label>
                 <select class="form-control" name="chalet" id="chalet">
                     @foreach ($rooms as $room )
                     <option value="{{ $room->id }}">{{ $room->name }}</option>
@@ -101,7 +101,7 @@
               </div>
 
               <div class="form-group">
-                <label for="guests">Number of Guests:</label>
+                <label for="guests">{{ __('messages.customer') }}s:</label>
                 <select class="form-control" name="guests" id="guests">
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -115,7 +115,7 @@
               <div class="row">
                 <div class='col-sm-3'>
                     <div class="form-group">
-                        <label for="cin">Check-in Date</label>
+                        <label for="cin">{{ __('messages.checkin') }}</label>
                       <div class="input-group date" data-provide="datepicker" style="width:300px; display:table">
                           <input id="cin" name="cin" type="text" class="form-control" placeholder="MM/DD/YYYY" style="display:table-cell; width:100%">
                           <div class="input-group-addon">
@@ -125,7 +125,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="cout">Check-out Date</label>
+                        <label for="cout">{{ __('messages.checkout') }}</label>
                         <div class="input-group date" data-provide="datepicker" style="width:300px; display:table">
                             <input name="cout" id="cout" type="text" class="form-control" placeholder="MM/DD/YYYY" style="display:table-cell; width:100%">
                             <div class="input-group-addon">
@@ -137,8 +137,8 @@
             </div>
             
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('messages.close') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('messages.save') }}</button>
               </div>
             </form>
         </div>

@@ -5,7 +5,7 @@
       <div class="col-md">
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">Albatroz Lodge</h2>
-          <p>Nestling in the sand dunes of Inhambane, mozambique overlooking Tofo Bay we offer exclusive accommodation in our fully catered or self catered, en-suit chalets.</p>
+          <p>{{ __('messages.nestling') }}</p>
           <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
             <li class="ftco-animate"><a href="https://www.facebook.com/Albatroz-Lodge-1697672256942656" target="_blank"><span class="icon-facebook"></span></a></li>
@@ -15,27 +15,26 @@
       </div>
       <div class="col-md">
         <div class="ftco-footer-widget mb-4 ml-md-5">
-          <h2 class="ftco-heading-2">Useful Links</h2>
+          <h2 class="ftco-heading-2">{{ __('messages.usefullinks') }}</h2>
           <ul class="list-unstyled">
             <li><a href="/blog" class="py-2 d-block">Blogs</a></li>
-            <li><a href="/rooms" class="py-2 d-block">Rooms</a></li>
-            <li><a href="/restaurant" class="py-2 d-block">Restaurant</a></li>
+            <li><a href="/rooms" class="py-2 d-block">{{ __('messages.chalets') }}</a></li>
+            <li><a href="/restaurant" class="py-2 d-block">{{ __('messages.rest') }}</a></li>
           </ul>
         </div>
       </div>
       <div class="col-md">
          <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">Privacy</h2>
+          <h2 class="ftco-heading-2">{{ __('messages.privacy') }}</h2>
           <ul class="list-unstyled">
-            <li><a href="/about" class="py-2 d-block">About Us</a></li>
-            <li><a href="/login" class="py-2 d-block">Admin Panel</a></li>
-            <li><a href="/contact" class="py-2 d-block">Contact Us</a></li>
+            <li><a href="/about" class="py-2 d-block">{{ __('messages.about') }}</a></li>
+            <li><a href="/contact" class="py-2 d-block">{{ __('messages.contact') }}</a></li>
           </ul>
         </div>
       </div>
       <div class="col-md">
         <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Have a Questions?</h2>
+            <h2 class="ftco-heading-2">{{ __('messages.questions') }}</h2>
             <div class="block-23 mb-3">
               <ul>
                 <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>

@@ -17,8 +17,8 @@
           <div class="row no-gutters slider-text align-items-center justify-content-end">
           <div class="col-md-6 ftco-animate">
               <div class="text">
-                  <h2>More than a hotel... an experience</h2>
-                <h1 class="mb-3">Hotel for the whole family, all year round.</h1>
+                  <h2>{{ __('messages.morethan') }}</h2>
+                <h1 class="mb-3">{{ __('messages.allyear') }}</h1>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
           <div class="col-md-6 ftco-animate">
               <div class="text">
                   <h2>Albatroz Lodge &amp; Restaurant</h2>
-                <h1 class="mb-3">It feels like staying in your own home.</h1>
+                <h1 class="mb-3">{{ __('messages.ownhome') }}</h1>
             </div>
           </div>
         </div>
@@ -51,8 +51,8 @@
                     <div class="col-md d-flex py-md-4">
                         <div class="form-group align-self-stretch d-flex align-items-end">
                             <div class="wrap align-self-stretch py-3 px-4">
-                                    <label for="#">Check-in Date</label>
-                                    <input name="check_in" id="check_in" type="text" class="form-control checkin_date" placeholder="Check-in date">
+                                    <label for="#">{{ __('messages.checkin') }}</label>
+                                    <input name="check_in" id="check_in" type="text" class="form-control checkin_date" placeholder="{{ __('messages.checkin') }}">
                                     @if ($errors->has('check_in'))
                                     <span class="text-danger">{{ $errors->first('check_in') }}</span>
                                 @endif
@@ -62,8 +62,8 @@
                     <div class="col-md d-flex py-md-4">
                         <div class="form-group align-self-stretch d-flex align-items-end">
                             <div class="wrap align-self-stretch py-3 px-4">
-                                    <label for="#">Check-out Date</label>
-                                    <input name="check_out" id="check_out" type="text" class="form-control checkout_date" placeholder="Check-out date">
+                                    <label for="#">{{ __('messages.checkout') }}</label>
+                                    <input name="check_out" id="check_out" type="text" class="form-control checkout_date" placeholder="{{ __('messages.checkout') }}">
                                     @if ($errors->has('check_out'))
                                     <span class="text-danger">{{ $errors->first('check_out') }}</span>
                                 @endif
@@ -74,17 +74,17 @@
                     <div class="col-md d-flex py-md-4">
                         <div class="form-group align-self-stretch d-flex align-items-end">
                             <div class="wrap align-self-stretch py-3 px-4">
-                                  <label for="#">Guests</label>
+                                  <label for="#">{{ __('messages.guests') }}</label>
                                   <div class="form-field">
                                     <div class="select-wrap">
                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                             <select name="guests" id="guests" class="form-control">
-                                <option value="1">1 Adult</option>
-                              <option value="2">2 Adult</option>
-                              <option value="3">3 Adult</option>
-                              <option value="4">4 Adult</option>
-                              <option value="5">5 Adult</option>
-                              <option value="6">6 Adult</option>
+                                <option value="1">1 {{ __('messages.adults') }}</option>
+                              <option value="2">2 {{ __('messages.adults') }}</option>
+                              <option value="3">3 {{ __('messages.adults') }}</option>
+                              <option value="4">4 {{ __('messages.adults') }}</option>
+                              <option value="5">5 {{ __('messages.adults') }}</option>
+                              <option value="6">6 {{ __('messages.adults') }}</option>
                             </select>
                           </div>
                           </div>
@@ -98,7 +98,7 @@
                       
                         <div class="form-group d-flex align-self-stretch">
                           <button type="submit" class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block">
-                            <span>Check Availability <small>Best Price Guaranteed!</small></span>
+                            <span>{{ __('messages.cav') }}<small>{{ __('messages.bprice') }}</small></span>
                           </button>
                     </div>
                     </div>
@@ -121,8 +121,8 @@
   <div class="container">
       <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-7 heading-section text-center ftco-animate">
-          <span class="subheading">Welcome to Albatroz Lodge</span>
-        <h2 class="mb-4">You'll Never Want To Leave</h2>
+          <span class="subheading">{{ __('messages.welcome') }} Albatroz Lodge</span>
+        <h2 class="mb-4">{{ __('messages.youll') }}</h2>
       </div>
     </div>  
     <div class="row d-flex">
@@ -134,7 +134,7 @@
               </div>
           </div>
           <div class="media-body">
-            <h3 class="heading mb-3">Friendly Service</h3>
+            <h3 class="heading mb-3">{{ __('messages.fservice') }}</h3>
           </div>
         </div>      
       </div>
@@ -146,34 +146,12 @@
               </div>
           </div>
           <div class="media-body">
-            <h3 class="heading mb-3">Get Breakfast</h3>
+            <h3 class="heading mb-3">{{ __('messages.gbreakfast') }}</h3>
           </div>
         </div>    
       </div>
-      <div class="col-md px-md-1 d-flex align-sel Searchf-stretch ftco-animate">
-        <div class="media block-6 services py-4 d-block text-center">
-          <div class="d-flex justify-content-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                  <span class="flaticon-car"></span>
-              </div>
-          </div>
-          <div class="media-body">
-            <h3 class="heading mb-3">Transfer Services</h3>
-          </div>
-        </div>      
-      </div>
-      <div class="col-md px-md-1 d-flex align-self-stretch ftco-animate">
-        <div class="media block-6 services py-4 d-block text-center">
-          <div class="d-flex justify-content-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                  <span class="flaticon-spa"></span>
-              </div>
-          </div>
-          <div class="media-body">
-            <h3 class="heading mb-3">Suits &amp; SPA</h3>
-          </div>
-        </div>      
-      </div>
+      
+      
       <div class="col-md pl-md-1 d-flex align-self-stretch ftco-animate">
         <div class="media block-6 services py-4 d-block text-center">
           <div class="d-flex justify-content-center">
@@ -182,7 +160,7 @@
               </div>
           </div>
           <div class="media-body">
-            <h3 class="heading mb-3">Cozy Rooms</h3>
+            <h3 class="heading mb-3">{{ __('messages.crooms') }}</h3>
           </div>
         </div>      
       </div>
@@ -199,12 +177,11 @@
                 </div>
                 <div class="col-md-5 wrap-about pb-md-3 ftco-animate pr-md-5 pb-md-5 pt-md-4">
           <div class="heading-section mb-4 my-5 my-md-0">
-              <span class="subheading">About Albatroz Lodge</span>
-            <h2 class="mb-4">Albatroz Lodge the Most Recommended Lodge in Tofo</h2>
+              <span class="subheading">{{ __('messages.ab') }} Albatroz Lodge</span>
+            <h2 class="mb-4">Albatroz Lodge {{ __('messages.mostrec') }} Tofo</h2>
           </div>
-          <p>Our exclusive restaurant and fully stocked bar offers mouth watering Mozambiquian cuisine. 
-           Relax while enjoying a sundowner, looking out over Tofo Bay.</p>
-          <p><a href="/rooms" class="btn btn-secondary rounded">View Our Chalets</a></p>
+          <p>{{ __('messages.ourexclusive') }}</p>
+          <p><a href="/rooms" class="btn btn-secondary rounded">{{ __('messages.vchalets') }}</a></p>
                 </div>
             </div> 
         </div>
@@ -219,8 +196,8 @@
       <div class="col-md-7 py-5 pl-md-5">
           <div class="py-md-5">
               <div class="heading-section ftco-animate mb-4">
-                  <span class="subheading">Reviews</span>
-                  <h2 class="mb-0">Happy Customer</h2>
+                  <span class="subheading">{{ __('messages.reviews') }}</span>
+                  <h2 class="mb-0">{{ __('messages.happy') }}</h2>
                 </div>
             <div class="carousel-testimony owl-carousel ftco-animate">
 
@@ -235,7 +212,7 @@
                       </div>
                       <div class="pos ml-3">
                           <p class="name">{{ $review->user->name }}</p>
-                        <span class="position">Customer</span>
+                        <span class="position">{{ __('messages.customer') }}</span>
                       </div>
                     </div>
                 </div>
@@ -246,7 +223,7 @@
           </div>
 
           <div class="col-md-12 text-center ftco-animate">
-            <p><a href="#" class="btn btn-secondary rounded" data-toggle="modal" data-target="#reviewModal">Leave a Review</a></p>
+            <p><a href="#" class="btn btn-secondary rounded" data-toggle="modal" data-target="#reviewModal">{{ __('messages.leavereview') }}</a></p>
           </div>
 
       </div>
@@ -260,8 +237,8 @@
     <div class="container-fluid px-0">
         <div class="row no-gutters justify-content-center mb-5 pb-3">
       <div class="col-md-7 heading-section text-center ftco-animate">
-          <span class="subheading">Albatroz Rooms</span>
-        <h2 class="mb-4">Hotel Master's Rooms</h2>
+          <span class="subheading">Albatroz {{ __('messages.chalets') }}</span>
+        <h2 class="mb-4">{{ __('messages.ourchalets') }}</h2>
       </div>
     </div> 
     <div class="row no-gutters"> 
@@ -275,9 +252,9 @@
                     <div class="half left-arrow d-flex align-items-center">
                         <div class="text p-4 text-center">
                             <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">${{ $room->price }}.00</span> <span class="per">per night</span></p>
+                            <p class="mb-0"><span class="price mr-1">${{ $room->price }}.00</span> <span class="per">{{ __('messages.priceper') }}</span></p>
                             <h3 class="mb-3"><a href="rooms/show/{{ $room->id }}">{{ $room->name }}</a></h3>
-                            <p class="pt-1"><a href="rooms/show/{{ $room->id }}" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
+                            <p class="pt-1"><a href="rooms/show/{{ $room->id }}" class="btn-custom px-3 py-2 rounded">{{ __('messages.viewdetails') }} <span class="icon-long-arrow-right"></span></a></p>
                         </div>
                     </div>
                 </div>
@@ -299,8 +276,8 @@
         <div class="container-fluid px-md-4">
             <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-7 heading-section text-center ftco-animate">
-          <span class="subheading">Restaurant</span>
-        <h2>Our Specials</h2>
+          <span class="subheading">{{ __('messages.rest') }}</span>
+        <h2>{{ __('messages.ourspecials') }}</h2>
       </div>
     </div>
     <div class="row">
@@ -328,7 +305,7 @@
         
         
         <div class="col-md-12 text-center ftco-animate">
-            <p><a href="/restaurant" class="btn btn-secondary rounded ">View All Menu</a></p>
+            <p><a href="/restaurant" class="btn btn-secondary rounded ">{{ __('messages.allmenu') }}</a></p>
         </div>
     </div>
         </div>
@@ -339,8 +316,8 @@
   <div class="container">
     <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-7 heading-section text-center ftco-animate">
-          <span class="subheading">Read Blog</span>
-        <h2>Recent Blog</h2>
+          <span class="subheading">{{ __('messages.readblog') }}</span>
+        <h2>{{ __('messages.recentblog') }}</h2>
       </div>
     </div>
     <div class="row d-flex">
@@ -372,8 +349,8 @@
   <div class="container-fluid">
     <div class="row no-gutters justify-content-center pb-5">
       <div class="col-md-7 text-center heading-section ftco-animate">
-          <span class="subheading">Photos</span>
-        <h2><span>Instagram</span></h2>
+          <span class="subheading">{{ __('messages.photos') }}</span>
+        <h2><span>{{ __('messages.gallery') }}</span></h2>
       </div>
     </div>
     <div class="row no-gutters">

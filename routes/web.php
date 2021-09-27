@@ -19,6 +19,8 @@ use App\Http\Controllers\UsersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Languages
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
 //home page
 Route::get('/', [HomeController::class, 'index']);
@@ -43,6 +45,7 @@ Route::get('/rooms/show/{id}', [RoomController::class, 'show']);
 
 //Bookings
 Route::post('/booking', [BookingController::class, 'store'])->name('booking.make');
+Route::post('/booking/{id}', [BookingController::class, 'store_single'])->name('bookingsingle.make');
 
 
 //Admin Page

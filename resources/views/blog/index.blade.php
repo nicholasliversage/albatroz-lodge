@@ -8,8 +8,8 @@
       <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
             <div class="text">
-              <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Home</a></span> <span>Blog</span></p>
-              <h1 class="mb-4 bread">Our Stories</h1>
+              <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">{{ __('messages.home') }}</a></span> <span>Blogs</span></p>
+              <h1 class="mb-4 bread">{{ __('messages.our') }} Blogs</h1>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
               </div>
               <h3 class="heading"><a href="/blogs/show/{{ $blog->id }}">{{ $blog->title }}</a></h3>
               <p>{{ $blog->subject }}</p>
-              <a href="/blogs/show/{{ $blog->id }}" class="btn btn-secondary rounded">More info</a>
+              <a href="/blogs/show/{{ $blog->id }}" class="btn btn-secondary rounded">{{ __('messages.moreinfo') }}</a>
             </div>
           </div>
         </div>

@@ -22,12 +22,72 @@ class BookingController extends Controller
         if(auth()->id()){
             $startTime = $request->get('check_in');
             $endTime = $request->get('check_out');
+                       
+           $conflict = Booking::
+               where('room_id','!=',null)
+             ->where(fn($r) => $r->whereBetween('check_in', [$startTime, $endTime])
+             ->orWhereBetween('check_out', [$startTime, $endTime])
+             ->orWhere(fn ($q) => $q->where('check_in', '<=', $startTime)->where('check_out', '>=', $endTime)))
+             ->exists();
+            if ($conflict) {
+                $notification = [
+                    'message' => 'There is no space available for the chosen dates!', 
+                    'type' => 'warning'
+                ];
+                
+                session()->flash('notification', $notification);
+                return back();
+            }
+            else{
+
+        $id = auth()->id();
+        $user = User::find($id) ;
+        $booking = new Booking();
+        $booking->check_in = $request->get('check_in');
+        $booking->check_out = $request->get('check_out');
+        $booking->guests = $request->get('guests');
+        $booking->room_id = null;
+        //$booking->user_id = $user->id;
+        $user->bookings()->save($booking);
+        $notification = [
+            'message' => 'Your Request has been sent!', 
+            'type' => 'success'
+        ];
+        
+        session()->flash('notification', $notification);
+        return back();
+    }
+        }
+        else{
+            $notification = [
+                'message' => 'Please Login First', 
+                'type' => 'info'
+            ];
+            
+            session()->flash('notification', $notification);
+            return back();
+        }
+      }
+
+
+
+      public function store_single(Request $request,$id){
+        $this->validate($request, [
+            'check_in' => 'required',
+            'check_out' => 'required',
+            'guests' => 'required',
+        ]);
+
+    
+
+        if(auth()->id()){
+            $startTime = $request->get('check_in');
+            $endTime = $request->get('check_out');
            
 
             
-                 $bookings = Booking::where('room_id','!=',null)->get();
            $conflict = Booking::
-               where('room_id','!=',null)
+               where('room_id','=',$id)
                ->where(fn($r) => $r->whereBetween('check_in', [$startTime, $endTime])
              ->orWhereBetween('check_out', [$startTime, $endTime])
              ->orWhere(fn ($q) => $q->where('check_in', '<', $startTime)->where('check_out', '>', $endTime)))

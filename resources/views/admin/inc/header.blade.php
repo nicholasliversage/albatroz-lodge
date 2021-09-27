@@ -75,10 +75,9 @@
                             <i class="fa fa-user fa-fw"></i> {{ Auth::user()->name }} <b class="caret"></b>
                         </button>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            <li><a href="/"><i class="fa fa-home fa-fw "></i>{{ __('messages.home') }}</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
+                            
                             <li class="divider"></li>
                             <li>
                                 <a href="{{ route('logout') }}"
@@ -94,6 +93,21 @@
                         </ul>
                     </li>
                     @endif
+
+                    <li  class="dropdown">
+                        <button type="button" style="color: white" class="btn btn-primary dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
+                        </button>
+                        <ul class="dropdown-menu dropdown-user">
+                        @foreach (Config::get('languages') as $lang => $language)
+                            @if ($lang != App::getLocale())
+                                    
+                                    <li><a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a></a>
+                                    </li>
+                                    @endif
+                        @endforeach
+                        </ul>
+                      </li>
                 </ul>
                 <!-- /.navbar-top-links -->
 

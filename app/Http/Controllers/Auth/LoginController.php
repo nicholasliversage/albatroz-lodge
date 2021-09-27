@@ -40,7 +40,7 @@ class LoginController extends Controller
 
     protected function redirectTo()
 {
-  if (auth()->user()->user_type == 'Administrator')
+  if (auth()->user()->user_type == 'Administrator' || auth()->user()->user_type == 'Manager')
   {
     return 'dashboard';  // admin dashboard path
   }else if(auth()->user()->user_type == 'Client')
@@ -53,9 +53,6 @@ class LoginController extends Controller
   session()->flash('notification', $notification);
     return '/';  // admin dashboard path
   }  
-  else {
-    return 'admin';  // member dashboard path
-  }
   
 }
 
