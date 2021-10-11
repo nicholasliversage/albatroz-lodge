@@ -38,5 +38,7 @@ class HomeController extends Controller
         return view('admin.dashboard',compact('reservations','requests','rooms','dishes','blogs','users'));
 
     }
+
+
 }
 

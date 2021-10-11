@@ -29,6 +29,11 @@ class UsersController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:15', 'min:8'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'nationality' => ['required','string'],
+            'city' => ['required','string'],
+            'ID' => ['required','string'],
+            'birth' => ['required','string'],
+            'passport' => ['required','string'],
             'type' => ['required'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -65,6 +70,11 @@ class UsersController extends Controller
             'name' => $data['name'],
             'phone' => $data['phone'],
             'email' => $data['email'],
+            'nationality' => $data['nationality'],
+            'city' => $data['city'],
+            'passport' => $data['passport'],
+            'BI' => $data['ID'],
+            'birth' => $data['birth'],
             'user_type' =>$data['type'],
             'password' =>$data['password'],
         ]);

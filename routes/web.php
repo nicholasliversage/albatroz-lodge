@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\NotificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,11 +20,26 @@ use App\Http\Controllers\UsersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Notifications
+Route::get('/send-notification', [NotificationController::class, 'sendOfferNotification']);
+Route::get('/markAsRead/{id}', function($id){
+
+	auth()->user()
+        ->unreadNotifications
+        ->when($id, function ($query) use ($id) {
+            return $query->where('id', $id);
+        })
+        ->markAsRead();
+
+	return redirect()->back();
+
+})->name('mark');
+
 //Languages
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
 //home page
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('homepage');
 
 //Restaurant
 Route::get('/restaurant', [DishesController::class, 'index']);

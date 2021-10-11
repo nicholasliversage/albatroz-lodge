@@ -18,6 +18,11 @@ class UsersSeeder extends Seeder
         $root->phone = '871218243';
         $root->user_type = 'Administrator';
         $root->email = 'nicolasliversage@gmail.com';
+        $root->nationality = 'Mozambican';
+        $root->city = 'Inhambane';
+        $root->BI = 'MI98765433456';
+        $root->birth ='08/04/1999';
+        $root->passport ='NH098765';
         $root->password = 'liversage123';
         $root->save();
 
@@ -26,6 +31,11 @@ class UsersSeeder extends Seeder
         $root->phone = '871218243';
         $root->user_type = 'Administrator';
         $root->email = 'elisaliversage@gmail.com';
+        $root->nationality = 'Mozambican';
+        $root->city = 'Inhambane';
+        $root->BI = 'MI98765433456';
+        $root->birth ='08/04/1999';
+        $root->passport ='NH098765';
         $root->password = 'elisamario123';
         $root->save();
 
@@ -34,6 +44,11 @@ class UsersSeeder extends Seeder
         $root->phone = '871218243';
         $root->user_type = 'Administrator';
         $root->email = 'christopherliversage@gmail.com';
+        $root->nationality = 'Mozambican';
+        $root->city = 'Inhambane';
+        $root->BI = 'MI98765433456';
+        $root->birth ='08/04/1999';
+        $root->passport ='NH098765';
         $root->password = 'chris1234';
         $root->save();
 
@@ -42,6 +57,11 @@ class UsersSeeder extends Seeder
         $root->phone = '871218243';
         $root->user_type = 'Manager';
         $root->email = 'pauloliversage@gmail.com';
+        $root->nationality = 'Mozambican';
+        $root->city = 'Inhambane';
+        $root->BI = 'MI98765433456';
+        $root->birth ='08/04/1999';
+        $root->passport ='NH098765';
         $root->password = 'paulo123';
         $root->save();
     }

@@ -16,9 +16,7 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->user_type == 'Administrator'){
-            return $next($request);
-          } else {
+        if (auth()->user()->user_type != 'Client'){
             return view('admin.dashboard');
           }
     }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Booking;
 use App\Models\Room;
+
 use Session;
 
 class BookingController extends Controller
@@ -23,12 +24,15 @@ class BookingController extends Controller
             $startTime = $request->get('check_in');
             $endTime = $request->get('check_out');
                        
-           $conflict = Booking::
-               where('room_id','!=',null)
-             ->where(fn($r) => $r->whereBetween('check_in', [$startTime, $endTime])
-             ->orWhereBetween('check_out', [$startTime, $endTime])
-             ->orWhere(fn ($q) => $q->where('check_in', '<=', $startTime)->where('check_out', '>=', $endTime)))
-             ->exists();
+            $conflict = Booking::where(function($query){
+                $query->where('room_id','!=',null);
+            })
+         ->whereBetween('check_in',[$startTime, $endTime])
+        ->WhereBetween('check_out',[$startTime, $endTime])
+        ->Where(function($query) use($request){
+            $query->where('check_in','<=',$request->get('check_in'))
+                ->where('check_out','>=',$request->get('check_out'));
+        })->exists();
             if ($conflict) {
                 $notification = [
                     'message' => 'There is no space available for the chosen dates!', 
@@ -49,13 +53,8 @@ class BookingController extends Controller
         $booking->room_id = null;
         //$booking->user_id = $user->id;
         $user->bookings()->save($booking);
-        $notification = [
-            'message' => 'Your Request has been sent!', 
-            'type' => 'success'
-        ];
         
-        session()->flash('notification', $notification);
-        return back();
+         return redirect('/send-notification');
     }
         }
         else{
@@ -84,14 +83,15 @@ class BookingController extends Controller
             $startTime = $request->get('check_in');
             $endTime = $request->get('check_out');
            
-
-            
-           $conflict = Booking::
-               where('room_id','=',$id)
-               ->where(fn($r) => $r->whereBetween('check_in', [$startTime, $endTime])
-             ->orWhereBetween('check_out', [$startTime, $endTime])
-             ->orWhere(fn ($q) => $q->where('check_in', '<', $startTime)->where('check_out', '>', $endTime)))
-             ->exists();
+            $conflict = Booking::where(function($query) use ($id){
+                $query->where('room_id','=',$id);
+            })
+         ->whereBetween('check_in',[$startTime, $endTime])
+        ->WhereBetween('check_out',[$startTime, $endTime])
+        ->Where(function($query) use($request){
+            $query->where('check_in','<=',$request->get('check_in'))
+                ->where('check_out','>=',$request->get('check_out'));
+        })->exists();
             if ($conflict) {
                 $notification = [
                     'message' => 'There is no space available for the chosen dates!', 

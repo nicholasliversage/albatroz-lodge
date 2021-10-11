@@ -9,61 +9,39 @@
                
 
                 <ul style="margin-top: 10px;" class="nav navbar-right navbar-top-links">
-                    @if (Auth::guest() == false)
+                    @if (Auth::user())
                     <li >
                         <button type="button" class="btn btn-primary dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
+                            <i class="fa fa-bell fa-fw"></i>
+                            <span class="badge badge-danger badge-counter">{{ Auth::user()->unreadNotifications->count() }}</span>
+                            <b class="caret"></b>
                         </button>
                         <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-comment fa-fw"></i> New Comment
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                        <span class="pull-right text-muted small">12 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-tasks fa-fw"></i> New Task
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li> 
+                            
+                                
+                            
+                            @forelse (Auth::user()->unreadNotifications as $notifications)
+                                @if($notifications->data == 1 )
+                                <li>
+                                    <a  data-toggle="modal" data-target="#requestsModal">
+                                        <div>
+                                            <i class="fa fa-tasks fa-fw"></i> New Reservation Requests
+
+                                        </div>
+                                    </a>
+                                </li>
+                               @endif
+                              
+                               @empty 
+                               <li><a>There are no new notifications</a></li>
+
+                            @endforelse
+                               
+                           
+                            </ul>
+                        </li> 
+                         
+                            
                     @endif
                     
                     @if (Auth::guest())
@@ -113,3 +91,41 @@
 
                 
             </nav>
+
+
+            <div class="modal fade" id="requestsModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="requestsModal">{{ __('New Reservation Requests') }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            @foreach (Auth::user()->unreadNotifications as $notifications)
+                            @if($notifications->data == 1)
+                            <div class="alert alert-success" role="alert">
+                                [{{ $notifications->created_at }}] User  has just registered.
+                                <a href="/markAsRead/{{ $notifications->id }}" id="mark-as-read" class="float-right mark-as-read" data-id="{{ $notifications->id }}">
+                                    Mark as read
+                                </a>
+                            </div>
+                    
+                            
+                                <a href="#" id="mark-all">
+                                    Mark all as read
+                                </a>
+                            
+                           @endif
+                          
+                         
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            

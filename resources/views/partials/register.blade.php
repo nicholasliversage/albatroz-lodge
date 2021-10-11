@@ -1,18 +1,42 @@
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    .row {
+      display: flex;
+    }
+    
+    /* Create two equal columns that sits next to each other */
+    .column {
+      flex: 50%;
+      padding: 10px;
+      /* Should be removed. Only for demonstration */
+    }
+    /* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+    </style>
+
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
+    <div  class="modal-dialog" role="document">
+        <div style="width: 750px; height:500px; "  class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="registerModal">{{ __('messages.register') }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div  class="modal-body">
                 <form method="POST" action="{{ route('register.custom') }}" id="registerForm">
                     @csrf
 
                     <input name="register" type="hidden" value="1">
-
+                  <div class="row">
+                      <div class="column">
                     <div class="form-group row">
                         <label for="nameInput" class="col-md-4 col-form-label text-md-right">{{ __('messages.name') }}</label>
 
@@ -72,7 +96,10 @@
                         @endif
                         </div>
                     </div>
+                      </div>
 
+
+                      <div class="column">
                     <div class="form-group row">
                         <label for="passport" class="col-md-4 col-form-label text-md-right">{{ __('messages.passport') }}</label>
 
@@ -129,6 +156,8 @@
                         </div>
                     </div>
 
+                 
+
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
                             <button type="submit" class="btn btn-secondary">
@@ -136,6 +165,9 @@
                             </button>
                         </div>
                     </div>
+
+                </div>
+                  </div>
                 </form>
             </div>
         </div>

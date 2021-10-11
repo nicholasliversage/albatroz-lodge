@@ -38,7 +38,7 @@
         </div>
           <p> <span>${{ $room->price }}.00 {{ __('messages.priceper') }}</span><p>
             @if ( Auth::user()->user_type == 'Administrator')
-            <a href="#" data-toggle="modal" data-target="#modalFormEdit" class="btn btn-primary">{{ __('messages.edit') }}</a>
+            <a href="#" data-toggle="modal"  data-target="#modalFormEdit" class="btn btn-primary">{{ __('messages.edit') }}</a>
            <button onclick="return confirm('Are you sure?');" type="submit" class="btn btn-danger" href="#" >Delete</button>
             @endif
           </form>
@@ -287,3 +287,9 @@
     </div>
   </div>
 @endsection
+
+<script type="text/javascript">
+
+
+
+</script>
