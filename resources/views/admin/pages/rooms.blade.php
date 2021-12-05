@@ -38,7 +38,7 @@
         </div>
           <p> <span>${{ $room->price }}.00 {{ __('messages.priceper') }}</span><p>
             @if ( Auth::user()->user_type == 'Administrator')
-            <a href="#" data-toggle="modal"  data-target="#modalFormEdit" class="btn btn-primary">{{ __('messages.edit') }}</a>
+            <a href="#" data-toggle="modal"  data-target="#modalFormEdit{{ $room->id }}" class="btn btn-primary">{{ __('messages.edit') }}</a>
            <button onclick="return confirm('Are you sure?');" type="submit" class="btn btn-danger" href="#" >Delete</button>
             @endif
           </form>
@@ -166,8 +166,8 @@
 
 
 
-
-  <div  class="modal fade" id="modalFormEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  @foreach ($rooms as $room)
+  <div  class="modal fade" id="modalFormEdit{{ $room->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -282,10 +282,11 @@
                 </div>
             </form>
         </div>
-       
+      
       </div>
     </div>
   </div>
+  @endforeach
 @endsection
 
 <script type="text/javascript">

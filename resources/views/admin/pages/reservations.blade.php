@@ -48,7 +48,6 @@
                                         <form action="{{ route('request.delete',$booking->id) }}" method="post">
                                             @csrf
                                         <button onclick="return confirm('Are you sure?');" type="submit" class="btn btn-danger">Delete</button>
-                                        <button type="button" class="btn btn-primary">{{ __('messages.edit') }}</button>
                                         </form>
                                     </td>
                                 </tr>

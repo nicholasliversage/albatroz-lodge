@@ -46,7 +46,7 @@
                                         @csrf
                                         <button type="submit" onclick="return confirm('Are you sure ?');" class="btn btn-danger">Delete</button>
                                     
-                                        <button data-toggle="modal" data-target="#modalFormEdit"  type="button" class="btn btn-primary">{{ __('messages.edit') }}</button>
+                                        <button data-toggle="modal" data-target="#modalFormEdit{{ $user->id }}"  type="button" class="btn btn-primary">{{ __('messages.edit') }}</button>
                                     </form>
                                     </td>
                                 </tr>
@@ -151,8 +151,10 @@
 
 @if ($users->count() > 0)
     
+@foreach ($users as $user )
+    
 
-  <div class="modal fade" id="modalFormEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modalFormEdit{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -214,6 +216,7 @@
       </div>
     </div>
   </div>
+  @endforeach
   @endif
 @endsection
 

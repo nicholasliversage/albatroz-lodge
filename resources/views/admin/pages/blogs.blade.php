@@ -28,7 +28,7 @@
            
           <p> <span>{{ __('messages.comments') }}: {{ $blog->comments->count() }}</span><p>
             @if ( Auth::user()->user_type == 'Administrator')
-           <a href="#" data-toggle="modal" data-target="#modalFormEdit" class="btn btn-primary">{{ __('messages.edit') }}</a>
+           <a href="#" data-toggle="modal" data-target="#modalFormEdit{{ $blog->id }}" class="btn btn-primary">{{ __('messages.edit') }}</a>
            <button onclick="return confirm('Are you sure?');" class="btn btn-danger" type="submit" >Delete</button>
             @endif
           </div>
@@ -111,8 +111,10 @@
 
 
 
-
-<div class="modal fade" id="modalFormEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@foreach ($blogs as $blog)
+  
+@endforeach
+<div class="modal fade" id="modalFormEdit{{ $blog->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -180,4 +182,5 @@
     </div>
   </div>
 </div>
+@endforeach
       @endsection
