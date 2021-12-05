@@ -20,7 +20,7 @@
                             
                                 
                             
-                            @forelse (Auth::user()->unreadNotifications as $notifications)
+                             @forelse (Auth::user()->unreadNotifications as $notifications)
                                 @if($notifications->data == 1 )
                                 <li>
                                     <a  data-toggle="modal" data-target="#requestsModal">
