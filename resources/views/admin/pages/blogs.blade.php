@@ -113,7 +113,7 @@
 
 @foreach ($blogs as $blog)
   
-@endforeach
+
 <div class="modal fade" id="modalFormEdit{{ $blog->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
