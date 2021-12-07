@@ -106,7 +106,7 @@
                             @foreach (Auth::user()->unreadNotifications as $notifications)
                             @if($notifications->data == 1)
                             <div class="alert alert-success" role="alert">
-                                [{{ $notifications->created_at }}] User  has just registered.
+                                [{{ $notifications->created_at }}] New reservation request
                                 <a href="/markAsRead/{{ $notifications->id }}" id="mark-as-read" class="float-right mark-as-read" data-id="{{ $notifications->id }}">
                                     Mark as read
                                 </a>
